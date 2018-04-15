@@ -1,0 +1,58 @@
+h1 {
+	text-align: center;
+	
+}
+h2 {
+	text-align: center;
+	
+}
+#game div{
+	float: left;
+}
+
+.card {
+	height: 5em;
+	width: 5em;
+	background-color: #d7a2b9;
+	margin:5em;
+	text-align: center;
+	
+}
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	
+	color: white;
+	background-color: #d7a2b9;
+}
+
+footer div {
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding: 20%;
+
+}
+footer div p {
+	font-size: 2em;
+	text-align: center;
+	}
+}
+
+/* Spielinfo */
+#info {
+  background-color: #303030;
+  padding-top: 40px;
+  text-align: center;
+  padding-right: 3em;
+}
+footer hr.divider {
+  display: block;
+
+  margin: 30px auto;
+  height: 3px;
+  border: 0;
+}
