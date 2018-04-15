@@ -10,7 +10,7 @@ namespace memory {
     // Eingabe für Kartenpaare
    function inputPairs() : number{
        
-    let pairs : string = prompt("Wie viele Kartenpaare (min. 5 & max. 10)");
+    let pairs : string = prompt("Mit wie vielen Pärchen wollt Ihr spielen? (min. 5 & max. 10)");
     let pairSum : number = parseInt(pairs);
        if (isNaN(pairSum) || pairSum < 5 || pairSum > 10) {
         alert("FALSCH")

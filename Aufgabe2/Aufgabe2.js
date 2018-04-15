@@ -5,7 +5,7 @@ var memory;
     var classList = ["hidden", "taken", "visible"];
     // Eingabe für Kartenpaare
     function inputPairs() {
-        let pairs = prompt("Wie viele Kartenpaare (min. 5 & max. 10)");
+        let pairs = prompt("Mit wie vielen Pärchen wollt Ihr spielen? (min. 5 & max. 10)");
         let pairSum = parseInt(pairs);
         if (isNaN(pairSum) || pairSum < 5 || pairSum > 10) {
             alert("FALSCH");
