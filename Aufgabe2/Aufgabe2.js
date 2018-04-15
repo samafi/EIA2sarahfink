@@ -2,21 +2,40 @@ var memory;
 (function (memory) {
     var infolist = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
     var cardList = [];
+    var classList = ["hidden", "taken", "visible"];
+    // Eingabe für Kartenpaare
     function inputPairs() {
-        let pairs = prompt("Wie viele Kartenpaare (mindestens 4 & maximal 10)");
+        let pairs = prompt("Wie viele Kartenpaare (min. 4 & max. 10)");
         let pairSum = parseInt(pairs);
-        let numberPlayers;
-        let gameInfo;
-        let gameBoard;
-        // Anzahl der Spieler erfragen
-        numberPlayers = parseInt(prompt("Bitte die Anzahl der Spieler eingeben", "nicht mehr als 4 Spieler"), 10);
-        numberPlayers > 4 ? numberPlayers = 4 : numberPlayers = numberPlayers;
-        console.log("inputPairs");
-        return pairSum;
+        if (isNaN(pairSum) || pairSum < 4 || pairSum > 10) {
+            alert("FALSCH");
+            inputPairs();
+        }
+        else {
+            console.log("inputPairs");
+            console.log(pairSum);
+            return pairSum;
+        }
+    }
+    // Eingabe wieviele Spieler
+    function inputPlayer() {
+        let n = prompt("Wieviele Spieler wollen mitspielen?(min. 1 & max. 4)");
+        let nSum = parseInt(n);
+        if (isNaN(nSum) || nSum < 0 || nSum > 4) {
+            alert("FALSCH");
+            inputPlayer();
+        }
+        else {
+            console.log("inputPlayer");
+            console.log(nSum);
+            return nSum;
+        }
     }
     let amount = inputPairs();
+    let players = inputPlayer();
     console.log("Länge Infolist", infolist.length);
     console.log("Content Infolist", infolist);
+    //Buchstaben verdoppeln und in einem neuen Array sichern
     function shuffelAray(x) {
         for (let i = 1; i <= x; i++) {
             var content = infolist[0];
@@ -26,6 +45,7 @@ var memory;
         }
         console.log("Content CardList", cardList);
     }
+    // Karten bauen
     function generateCards(y) {
         var node = document.getElementById("game");
         var childNodeHTML;
@@ -33,8 +53,6 @@ var memory;
         while (i < (y * 2)) {
             let min = 0;
             let max = (cardList.length);
-            // min = Math.ceil(min);
-            //  max = Math.floor(max);
             var random = Math.floor(Math.random() * (max - min)) + min;
             console.log("Card:" + i);
             console.log(random);
@@ -51,12 +69,28 @@ var memory;
             i++;
         }
     }
+    function generatePlayers() {
+        var node = document.getElementById("info");
+        var childNodeHTML;
+        var i = 0;
+        while (i < players) {
+            childNodeHTML = "<div  class='player' id='Spieler" + i + "'>";
+            childNodeHTML += "Spieler " + (i + 1);
+            childNodeHTML += "<p>";
+            childNodeHTML += "13 ";
+            childNodeHTML += "</p>";
+            childNodeHTML += " </div> ";
+            node.innerHTML += childNodeHTML;
+            i++;
+        }
+    }
     // Hauptprogramm
     function main() {
         shuffelAray(amount);
         console.log("main");
         // Content
         generateCards(amount);
+        generatePlayers();
     }
     // Add EventListener 
     document.addEventListener("DOMContentLoaded", main);

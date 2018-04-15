@@ -1,57 +1,70 @@
-h1 {
-	text-align: center;
-	
+
+body {
+	font-family:"arial", sans serif;
+	background-color: white;
 }
-h2 {
-	text-align: center;
-	
-}
+
 #game div{
 	float: left;
 }
 
 .card {
-	height: 5em;
-	width: 5em;
-	background-color: #d7a2b9;
-	margin:5em;
+	border-radius: 0.2em;
+	width: 3em;
+	height: 3em;
+	background-color:#d7a2b9;
+	font-size: 2em;
+	margin:0.2em;
 	text-align: center;
+	vertical-align: middle;
+	color:white;
 	
+}
+
+.hidden {
+	background-color: yellow;
+}
+
+.taken {
+	background-color: red;
+	
+}
+
+.visible {
+	background-color: silver;
 }
 
 footer {
 	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	
-	color: white;
-	background-color: #d7a2b9;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	background-color: #303030;
+	color: white;	
 }
 
-footer div {
+
+footer div{
 	float: left;
-	width: 100%;
+	width: 20%;
 	text-align: center;
-	padding: 20%;
-
-}
+	padding: 2%;
+	}
+	
 footer div p {
 	font-size: 2em;
 	text-align: center;
-	}
+	
 }
 
-/* Spielinfo */
-#info {
-  background-color: #303030;
-  padding-top: 40px;
-  text-align: center;
-  padding-right: 3em;
+
+h3 {
+	color: #d7a2b9;
+	text-align: center;
 }
-footer hr.divider {
-  display: block;
-  margin: 30px auto;
-  height: 3px;
-  border: 0;
+
+h2 {
+	text-align: center;
+	color: #303030;
+	
 }
