@@ -2,17 +2,17 @@ namespace memory {
 
     
     var infolist: string []=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-    var cardList: string[]=[];
+    var cardList: string []=[];
     var classList: string[]=["hidden", "taken", "visible"];
 
-
+   
 
     // Eingabe für Kartenpaare
    function inputPairs() : number{
        
-    let pairs : string = prompt("Wie viele Kartenpaare (min. 4 & max. 10)");
+    let pairs : string = prompt("Wie viele Kartenpaare (min. 5 & max. 10)");
     let pairSum : number = parseInt(pairs);
-       if (isNaN(pairSum) || pairSum < 4 || pairSum > 10) {
+       if (isNaN(pairSum) || pairSum < 5 || pairSum > 10) {
         alert("FALSCH")
         inputPairs();    
     }
@@ -69,10 +69,9 @@ namespace memory {
             cardList.push(content);
              
             var removed = infolist.splice(0, 1);
-            
-            
-            
+   
         }
+        
     console.log("Content CardList", cardList);
    
     
@@ -126,6 +125,9 @@ namespace memory {
             i++;
         }
         }
+    
+
+    
     
     
     // Hauptprogramm
