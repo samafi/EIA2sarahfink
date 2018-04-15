@@ -126,7 +126,20 @@ namespace memory {
         }
         }
     
+function randomStatus(): string {
+    let randomStatus: number = Math.random();
+    if (randomStatus <= .5) {
+      return "hidden";
+    } else if (randomStatus > .5 && randomStatus <= .95) {
+      return "taken";
+    } else if (randomStatus > .95) {
+      return "open";
+    }
+  
 
+
+
+}
     
     
     
