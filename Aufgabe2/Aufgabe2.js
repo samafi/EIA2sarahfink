@@ -19,7 +19,7 @@ var Memorie;
     for (let i = 0; i < numPlayer; i++) {
         player[i] = prompt("Bitte Spielernamen " + (i + 1) + " eingeben");
         if (player[i] == null) {
-            player[i] = "Mickey";
+            player[i] = "Sarah";
         }
     }
     /* Eingabe wieviele Kartenpaare */
