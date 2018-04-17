@@ -11,7 +11,7 @@ var Memorie;
     /* Eingabe wieviele Spieler*/
     let i = true;
     while (i) {
-        numPlayer = parseInt(prompt("Bitte wählen Sie zwischen 1 und 4 Spielern"), 10);
+        numPlayer = parseInt(prompt("Wieviele Spieler wollen mitspielen?(min. 1 & max. 4)"), 10);
         if (numPlayer >= 1 && numPlayer <= 4) {
             i = false;
         }
@@ -25,7 +25,7 @@ var Memorie;
     /* Eingabe wieviele Kartenpaare */
     i = true;
     while (i) {
-        numPairs = parseInt(prompt("Bitte wählen Sie zwischen 5 und 15 Kartenpaaren"), 10);
+        numPairs = parseInt(prompt("Mit wie vielen Pärchen wollt Ihr spielen? (min. 5 & max. 15)"), 10);
         if (numPairs >= 5 && numPairs <= 15) {
             i = false;
         }
