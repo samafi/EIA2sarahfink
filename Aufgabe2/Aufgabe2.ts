@@ -1,164 +1,124 @@
-namespace memory {
+namespace Memorie {
+    /*Variablen erstellen*/
+    let numPlayer: number = 0;
+    let numPairs: number = 0;
 
-    
-    var infolist: string []=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-    var cardList: string []=[];
-    var classList: string[]=["hidden", "taken", "visible"];
+    /*Array*/
+    let cardContent: string[] = ["Apfel", "Bahn", "C", "D", "Elf", "F", "Gans", "Hans", "I", "J", "Kuh", "L", "M", "Null", "O"];
+    let cardArray: string[] = [];
+    let player: string[] = [];
+    let score: number[] = [0,0,0,0];
 
-   
-
-    // Eingabe für Kartenpaare
-   function inputPairs() : number{
-       
-    let pairs : string = prompt("Mit wie vielen Pärchen wollt Ihr spielen? (min. 5 & max. 10)");
-    let pairSum : number = parseInt(pairs);
-       if (isNaN(pairSum) || pairSum < 5 || pairSum > 10) {
-        alert("FALSCH")
-        inputPairs();    
-    }
-    
-        else {
-       
-      
-       console.log("inputPairs")
-        
-       console.log(pairSum);
-       return pairSum;
-           
-    }
-       }
-     
-   
-    // Eingabe wieviele Spieler
-   
-      
- function inputPlayer():number{
-           let n : string = prompt ("Wieviele Spieler wollen mitspielen?(min. 1 & max. 4)");
-           let nSum : number = parseInt(n);
-            if (isNaN(nSum) || nSum < 0 || nSum > 4) {
-        alert("FALSCH")
-        inputPlayer();    
-    }
-    
-        else {
-       
-      
-       console.log("inputPlayer")
-        
-    console.log(nSum);
-       return nSum;
-           
-    }
-     }      
-   let amount :number =  inputPairs();
-   let players : number = inputPlayer();
-        
-    console.log("Länge Infolist", infolist.length);
-    console.log("Content Infolist", infolist);
-    
-    
-    
-    //Buchstaben verdoppeln und in einem neuen Array sichern
-    function shuffelAray(x:number): void {
-        
-        for (let i: number = 1; i <= x; i++) {
-             
-            
-        var content : string = infolist[0];  
-        cardList.push (content);
-            cardList.push(content);
-             
-            var removed = infolist.splice(0, 1);
-   
+      /* Eingabe wieviele Spieler*/
+        let i: boolean = true;
+        while (i) {
+            numPlayer = parseInt(prompt("Bitte wählen Sie zwischen 1 und 4 Spielern"), 10);
+            if (numPlayer >= 1 && numPlayer <= 4) {
+                i = false;
+            }
         }
+
+        for (let i: number = 0; i < numPlayer; i++) {
+            player[i] = prompt("Bitte Spielernamen " + (i+1) + " eingeben");
+            if (player[i] == null) {
+                player[i] = "Mickey";
+            }
+        }
+
+        /* Eingabe wieviele Kartenpaare */
+        i = true;
+        while (i) {
+            numPairs = parseInt(prompt("Bitte wählen Sie zwischen 5 und 15 Kartenpaaren"), 10);
+            if (numPairs >= 5 && numPairs <= 15) {
+                i = false;
+            }
+        }
+
+
+    /* Status mischen */
+    function mixStatus(): string {
+        let randomState: number = Math.random();
+        if (randomState >= 0.75) {
+            return "visible";
+        } else if (randomState > 0.5 && randomState < 0.75) {
+            return "taken";
+        }
+        return "hidden";
+    }
+
+    /* Karten durcheinander mischen*/
+    function shuffleCardArray(): void {
+        let i: number = cardArray.length;
+        let j: number = 0;
+        let temp: string = "";
+        while(--i > 0) {
+            j = Math.floor(Math.random() * (i+1));
+            temp = cardArray[j];
+            cardArray[j] = cardArray[i];
+            cardArray[i] = temp;
+        }
+    }
+
+    /*  Karten erzeugen */
+    function createBoard(): void {
+        let node: any = document.getElementById("game");
+        shuffleCardArray();
+        let childNodeHTML: string = "";
+        childNodeHTML += "<div>";
+        for (let i: number = 0; i < cardArray.length; i++) {
+            childNodeHTML += "<div>";
+            childNodeHTML += "<div class=\"";
+            childNodeHTML += mixStatus();
+            childNodeHTML += "\">";
+            childNodeHTML += cardArray[i];
+            childNodeHTML += "</div></div>";
+        }
+        childNodeHTML += "</div>";
+        node.innerHTML += childNodeHTML;
         
-    console.log("Content CardList", cardList);
-   
-    
+        console.log(childNodeHTML); 
     }
     
-
-    // Karten bauen
-    function generateCards(y:number) : void{
-        var node : any= document.getElementById("game");
-        var childNodeHTML : string;
-        var i : number = 0;
-        
-        
-        while (i < (y*2)) {
-            let min: number = 0;
-        let max: number = (cardList.length);
-
-            var random:number=Math.floor(Math.random() * (max - min)) + min; 
-            console.log("Card:" + i);
-              console.log(random); 
-          
-            childNodeHTML = "<div  class='card' id='Karte" + i + "'>";
-            childNodeHTML += "<p>";
-            childNodeHTML += cardList[random];
+    function playerInfo(): void {
+        let node: any = document.getElementById("info");
+        let childNodeHTML: string = "";
+        childNodeHTML += "<div>";
+        for(let i: number = 0; i < player.length; i++) {
+            childNodeHTML += "<div id=Spieler";
+            childNodeHTML += i;
+            childNodeHTML += ">";
+            childNodeHTML += "<p>Spieler: ";
+            childNodeHTML += player[i];
             childNodeHTML += "</p>";
-            childNodeHTML += " </div> ";      
-            node.innerHTML += childNodeHTML;
-            console.log("Länge Cardlist nach Generate, " + cardList.length)
-            var content : string = cardList[random];  
-             
-            var removed = cardList.splice(random, 1);
-            console.log(cardList);
-            
-            i++;
+            childNodeHTML += "<p>Punkte: ";
+            childNodeHTML += score[i];
+            childNodeHTML += "</p></div>";
         }
+        childNodeHTML += "</div>";
+        node.innerHTML += childNodeHTML;  
+        
+        console.log(childNodeHTML);
     }
-    
-    function generatePlayers() : void{
-        var node : any= document.getElementById("info");
-        var childNodeHTML : string;
-        var i : number = 0;
-        while (i < players) {
-          
-            childNodeHTML = "<div  class='player' id='Spieler" + i + "'>";
-            childNodeHTML += "Spieler " + (i+1);
-            childNodeHTML += "<p>";
-            childNodeHTML += "13 ";
-            childNodeHTML += "</p>";
-            childNodeHTML += " </div> ";      
-            node.innerHTML += childNodeHTML;
-            i++;
+
+    /* Hauptprogramm */
+    function section(): void {
+        console.log("section");
+       
+
+
+        /* Schleife für Kartenpaare */
+        for (let i: number = 0; i < numPairs; i++) {
+            /* cardContent 2x an cardArray [] anf�gen */
+            cardArray.push(cardContent[i]);
+            cardArray.push(cardContent[i]);
         }
-        }
-    
-function randomStatus(): string {
-    let randomStatus: number = Math.random();
-    if (randomStatus <= .5) {
-      return "hidden";
-    } else if (randomStatus > .5 && randomStatus <= .95) {
-      return "taken";
-    } else if (randomStatus > .95) {
-      return "open";
+
+        /* Spielboard erzeugen */
+        createBoard();
+        
+        /* info erzeugen */
+        playerInfo();
     }
-  
-
-
-
+    // Add EventListener - section() wird ausgeführt, sobald das DOM vollst�ndig geladen ist
+    document.addEventListener("DOMContentLoaded", section);
 }
-    
-    
-    
-    // Hauptprogramm
-    function main () : void {
-        
-         shuffelAray(amount);
-
-        
-        console.log("main");
-        
-        // Content
-         generateCards(amount);
-         generatePlayers();
-        }
-    
-
-
-        
-    // Add EventListener 
-document.addEventListener("DOMContentLoaded", main);
-} 

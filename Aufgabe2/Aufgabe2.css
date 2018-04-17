@@ -1,70 +1,139 @@
 
-body {
-	font-family:"arial", sans serif;
-	background-color: white;
-}
-
-#game div{
-	float: left;
-}
-
-.card {
-	border-radius: 0.3em;
-	width: 3em;
-	height: 3em;
-	background-color:#d7a2b9;
-	font-size: 2em;
-	margin:0.2em;
-	text-align: center;
-	vertical-align: middle;
-	color:white;
-	
-}
-
-.hidden {
-	background-color: yellow;
-}
-
-.taken {
-	background-color: red;
-	
-}
-
-.visible {
-	background-color: silver;
-}
-
-footer {
-	position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-	background-color: #303030;
-	color: white;	
-}
-
-
-footer div{
-	float: left;
-	width: 20%;
-	text-align: center;
-	padding: 2%;
-	}
-	
-footer div p {
-	font-size: 2em;
-	text-align: center;
-	
-}
-
-
 h3 {
 	color: #d7a2b9;
 	text-align: center;
+	font-size: 1.5em;
 }
 
 h2 {
 	text-align: center;
-	color: #303030;
+	color: #303030;	
+	font-size: 2em;
+}
+ 
+
+body{
+	font-family:"arial", sans serif;
+	background-color: white;
+}
+
+
+#game {
+	height: auto;
+	width: auto;
+	padding: 7px;
+	background-color: white;
 	
 }
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#game > div{
+	position: relative;
+	margin: 5%;
+	height: auto;
+	width: auto;
+	display: flex;
+	flex-wrap: wrap;	
+}
+
+#game div > div {
+	height: 60px;
+	width: 75px;
+	border-radius: 5px;
+	margin: 0px 21px 21px 0px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 70px;
+	position: relative;
+	font-family: arial;
+	font-size: 100%;
+}
+
+
+/*Spielerinformationen*/
+#info{
+	background-color: #303030;
+	height: auto;
+	width: 100%;
+}
+
+#info div > div {
+	height: 50px;
+	width: auto;
+	margin: 5px 5px 0px 25px;
+	float: left;
+	font-family: "arial", sans serif;
+	
+}
+
+
+.hidden {
+	background-color: #d7a2b9;
+	text-indent: -99999px;
+}
+
+.taken {
+	background-color: rosa;
+	transform: scale(0);
+}
+.visible{
+	background-color: silver;
+  	pointer-events: auto;
+	
+}
+footer {
+	background-color: #303030;
+}
+
+/* CSS-Tablet Portrait*/
+/*2-spaltiges Layout*/
+@media screen and (min-width:571px){
+	#game div > div {
+		height: 80px;
+		width: 80px;
+		line-height: 80px;
+	}
+	
+	#info div > div {
+		margin: 5px 50px 0px 50px;
+	}
+}	
+	
+	/* RESPONSIVE 
+	
+/*Tablet Ansicht*/
+/* 3-spaltiges Layout*/
+@media screen and (min-width:769px){
+	#game div > div {
+		height: 100px;
+		width: 100px;
+		line-height: 100px;
+	}
+	
+	#info div > div {
+		margin: 5px 10px 0px 30px;
+	}
+}
+
+/*Desktopansicht ab 1025px*/
+/*4-spaltiges Layout*/
+@media screen and (min-width:1025px){
+	#game div > div {
+		height: 144px;
+		width: 144px;
+		line-height: 144px;
+	}
+	
+	#info div > div {
+		margin: 5px 50px 0px 50px;
+		font-size: 1.2em;
+	}
+}
+footer {
+	background-color: #303030;
+}
+
+
