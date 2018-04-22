@@ -3,7 +3,7 @@ var Memorie;
     /*Variablen erstellen*/
     let numPlayer = 0;
     let numPairs = 0;
-    /*Array*/
+    /*mein Array*/
     let cardContent = ["Apfel", "Bahn", "C", "D", "Elf", "F", "Gans", "Hans", "I", "J", "Kuh", "L", "M", "Null", "O"];
     let cardArray = [];
     let player = [];

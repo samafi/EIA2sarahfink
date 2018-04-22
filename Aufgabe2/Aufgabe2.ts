@@ -1,9 +1,10 @@
 namespace Memorie {
+    
     /*Variablen erstellen*/
     let numPlayer: number = 0;
     let numPairs: number = 0;
 
-    /*Array*/
+    /*mein Array*/
     let cardContent: string[] = ["Apfel", "Bahn", "C", "D", "Elf", "F", "Gans", "Hans", "I", "J", "Kuh", "L", "M", "Null", "O"];
     let cardArray: string[] = [];
     let player: string[] = [];
