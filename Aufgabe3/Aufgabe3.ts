@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", main);
     
     function cardsCompare () : void {
         let openArray : HTMLElement[] = filterCardsByClass("visible");        // Definition des openArray, solle Funktion filterCardsByClass ausführen
-        if (openArray[0].children[0].innerHTML == openArray[1].children[0].innerHTML) {   // wenn das Kind an der Stelle [0] und das Kind der Stelle [1] gleich sind, dann:
+        if (openArray[0].children[0].innerHTML == openArray[1].children[0].innerHTML) {   
             for (let f: number = 0; f < openArray.length; f++) {
                 openArray[f].classList.remove("visible");                    // "visible" wird entfernt
                 openArray[f].classList.add("taken");                         // und durch "taken" ersetzt
