@@ -38,7 +38,7 @@ body{
 	display: flex;
 	flex-wrap: wrap;	
 }
-
+/*
 #game div > div {
 	height: 60px;
 	width: 75px;
@@ -50,8 +50,9 @@ body{
 	position: relative;
 	font-family: arial;
 	font-size: 100%;
+	background-color: black;
 }
-
+*/
 
 /*Spielerinformationen*/
 #info{
@@ -71,15 +72,48 @@ body{
 
 
 .hidden {
+	height: 60px;
+	width: 75px;
+	border-radius: 5px;
+	margin: 0px 21px 21px 0px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 70px;
+	position: relative;
+	font-family: arial;
+	font-size: 100%;
 	background-color: #d7a2b9;
 	text-indent: -99999px;
 }
 
+
 .taken {
-	background-color: rosa;
-	transform: scale(0);
+	height: 60px;
+	width: 75px;
+	border-radius: 5px;
+	margin: 0px 21px 21px 0px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 70px;
+	position: relative;
+	font-family: arial;
+	font-size: 100%;
+	background-color: white;
+		text-indent: -99999px;
+	
 }
-.visible{
+
+.open{
+	height: 60px;
+	width: 75px;
+	border-radius: 5px;
+	margin: 0px 21px 21px 0px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 70px;
+	position: relative;
+	font-family: arial;
+	font-size: 100%;
 	background-color: silver;
   	pointer-events: auto;
 	

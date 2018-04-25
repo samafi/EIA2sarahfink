@@ -6,13 +6,20 @@ document.addEventListener("DOMContentLoaded", main);
     let cardContent: string[] = ["Sommer", "Wolken", "Decke", "Tisch", "Zug", "Wasser", "Blume", "Regen", "Auto", "Haus"];
     let cardArray: HTMLElement[] = [];
     
-    let openArray: string[] = [];       
+    let openArray: HTMLElement [] = [];       
     let openCards: number = 0;
     
     let numPairs: number;
     let numPlayers: number;
     let playerInfo: HTMLElement;         
     let game: HTMLElement;
+    let checkRest: HTMLElement[] = [];
+    let greetNumber : number = 0;
+    
+
+
+   
+
 
     let score: number = 0;              
     let name: string = "Spieler ";
@@ -60,6 +67,7 @@ document.addEventListener("DOMContentLoaded", main);
         }
         
         // Eventlistener 
+
         game.addEventListener("click", clickHandler);
         
     }
@@ -69,7 +77,7 @@ document.addEventListener("DOMContentLoaded", main);
         
         card.innerHTML = `<span>${text}</span>`;             
                                                                                 
-        card.setAttribute("class", "card hidden");
+        card.setAttribute("class", "hidden");
                                                                                 
         cardArray.push(card);                                                   
     }
@@ -85,29 +93,7 @@ document.addEventListener("DOMContentLoaded", main);
 
 
     
- 
-    
-    function clickHandler (_event: MouseEvent) : void {
-        let cardClass: HTMLElement = <HTMLElement>_event.target;                // Gibt das HTMLElement zurück
-        if (cardClass.classList.contains("card")) {                             // classList = gibt den Klassen Namen eines Elements zurückk
-        openCards ++;                                                           
-            if (cardClass.classList.contains("hidden")) {                       // Wenn das Element den Klassen-Namen "hidden" hat, dann:
-                cardClass.classList.remove("hidden");                           // Klassen-Namen "hidden" wird gelöscht
-                cardClass.classList.add("visible");                             // Klassen-Namen wird auf "visible" gesetzt
-            }
-        }
-
-        if (openCards == 2) {                                                   // wenn zwei Karten offen daliegen, dann:
-            setTimeout(cardsCompare, 1500);                                     // Timeout für 2000 ms bzw. 1,5 Sekunden
-        }
-
-        if (openCards > 2) {                                                    // man kann nur 2 Karten anklicken
-            cardClass.classList.remove("visible");
-            cardClass.classList.add("hidden");
-        }
-    }
-    
-        function randomMix(_array: HTMLElement[]): HTMLElement[] {              //  Array wird gemischelt 
+            function randomMix(_array: HTMLElement[]): HTMLElement[] {              //  Array wird gemischelt 
         for (let i: number = _array.length - 1; i > 0; i--) {
             const j: number = Math.floor(Math.random() * (i + 1));
             [_array[i], _array[j]] = [_array[j], _array[i]];
@@ -115,37 +101,77 @@ document.addEventListener("DOMContentLoaded", main);
         return _array;                                                      //Array ist jetzt gemischelt
     }
     
-    function cardsCompare () : void {
-        let openArray : HTMLElement[] = filterCardsByClass("visible");        // Definition des openArray, solle Funktion filterCardsByClass ausführen
-        if (openArray[0].children[0].innerHTML == openArray[1].children[0].innerHTML) {   
-            for (let f: number = 0; f < openArray.length; f++) {
-                openArray[f].classList.remove("visible");                    // "visible" wird entfernt
-                openArray[f].classList.add("taken");                         // und durch "taken" ersetzt
-            }
-        }
-        else {                                                               // wenn die Kinder des Arrays nicht identisch sind, dann:
-            for (let f: number = 0; f < openArray.length; f++) {
-                openArray[f].classList.remove("visible");                    // "visible" wird entfernt
-                openArray[f].classList.add("hidden");                        // und durch "hidden" ersetzt
-            }
+    
+    
+    
+    function clickHandler(_event: MouseEvent): void {
+           let x : HTMLElement = <HTMLElement>_event.target;
+
+           if (x.classList.contains("hidden")) {  
+               x.classList.remove("hidden"); //hier war Fehler wegen Doppelklick, Class hidden wurde zuvor nicht entfernt
+               x.classList.add("open");                   
+               openCards ++;
+           }
+        
+                 
+          
+
+        if (openCards == 2) {                                                  
+            setTimeout(cardsCompare, 1000);                                    
         }
 
-        congrat();                                                     
-        openArray = [];                                                      
-        openCards = 0;                                                       
-    }
+        if (openCards > 2) {                                                    
+            x.classList.remove("open");
+            x.classList.add("hidden");
+        }
+           
+        if (x.classList.contains("open")) {
+            }
     
-    function filterCardsByClass (_filter : string) : HTMLElement[] {
-        return cardArray.filter(card => card.classList.contains(_filter));      // Filter 
+       } 
+    
+    function cardsCompare () :void {
+        let card1:HTMLDivElement=<HTMLDivElement>document.getElementsByClassName("open")[0];
+        let card2:HTMLDivElement=<HTMLDivElement>document.getElementsByClassName("open")[1];
         
+        openArray.push (card1, card2);
+        console.log(openArray);
+         if (openArray[0].innerHTML==openArray[1].innerHTML){
+            
+             openArray[0].classList.remove("open"); 
+             openArray[0].classList.add("taken");
+             
+            
+             openArray[1].classList.remove("open"); 
+             openArray[1].classList.add("taken");
+               
+             score ++;
+             console.log("Karetnpaaar abeglegt");
+             
+             greetNumber ++;
+             console.log(greetNumber);
+             
+            
+        
+    }else {
+             card1.classList.remove("open");
+             card1.classList.add("hidden"); 
+             
+             
+             card2.classList.remove("open"); 
+             card2.classList.add("hidden"); 
+             
+             }
+//        openCards Variabel wieder auf 0 setzen 
+        openCards=0;
+//        opeList Array löschen 
+        openArray.splice(0, 2);
+                congrats();
+
         }
-    
-    function congrat(): void {
-        let cardsTaken: HTMLElement[] = filterCardsByClass("hidden");
-        if (cardsTaken.length == 0) {                                        
-            alert("Super!!! :)");
-        }
-        cardsTaken = [];
-    }
+    function congrats() : void{
+             if (greetNumber == numPairs){
+                 alert("Glückwunsch!");}
+           }
 
 }

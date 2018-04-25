@@ -10,6 +10,8 @@ var MemoryAufgabe3;
     let numPlayers;
     let playerInfo;
     let game;
+    let checkRest = [];
+    let greetNumber = 0;
     let score = 0;
     let name = "Spieler ";
     //Eingabe wieviele Spieler
@@ -50,7 +52,7 @@ var MemoryAufgabe3;
     function createCard(text) {
         let card = document.createElement("div");
         card.innerHTML = `<span>${text}</span>`;
-        card.setAttribute("class", "card hidden");
+        card.setAttribute("class", "hidden");
         cardArray.push(card);
     }
     function createPlayer(_score, _name) {
@@ -62,23 +64,6 @@ var MemoryAufgabe3;
         playerInfo.appendChild(player);
         playerInfo.appendChild(spiel);
     }
-    function clickHandler(_event) {
-        let cardClass = _event.target; // Gibt das HTMLElement zurück
-        if (cardClass.classList.contains("card")) {
-            openCards++;
-            if (cardClass.classList.contains("hidden")) {
-                cardClass.classList.remove("hidden"); // Klassen-Namen "hidden" wird gelöscht
-                cardClass.classList.add("visible"); // Klassen-Namen wird auf "visible" gesetzt
-            }
-        }
-        if (openCards == 2) {
-            setTimeout(cardsCompare, 1500); // Timeout für 2000 ms bzw. 1,5 Sekunden
-        }
-        if (openCards > 2) {
-            cardClass.classList.remove("visible");
-            cardClass.classList.add("hidden");
-        }
-    }
     function randomMix(_array) {
         for (let i = _array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -86,33 +71,54 @@ var MemoryAufgabe3;
         }
         return _array; //Array ist jetzt gemischelt
     }
+    function clickHandler(_event) {
+        let x = _event.target;
+        if (x.classList.contains("hidden")) {
+            x.classList.remove("hidden"); //hier war Fehler wegen Doppelklick, Class hidden wurde zuvor nicht entfernt
+            x.classList.add("open");
+            openCards++;
+        }
+        if (openCards == 2) {
+            setTimeout(cardsCompare, 1000);
+        }
+        if (openCards > 2) {
+            x.classList.remove("open");
+            x.classList.add("hidden");
+        }
+        if (x.classList.contains("open")) {
+        }
+    }
     function cardsCompare() {
-        let openArray = filterCardsByClass("visible"); // Definition des openArray, solle Funktion filterCardsByClass ausführen
-        if (openArray[0].children[0].innerHTML == openArray[1].children[0].innerHTML) {
-            for (let f = 0; f < openArray.length; f++) {
-                openArray[f].classList.remove("visible"); // "visible" wird entfernt
-                openArray[f].classList.add("taken"); // und durch "taken" ersetzt
-            }
+        let card1 = document.getElementsByClassName("open")[0];
+        let card2 = document.getElementsByClassName("open")[1];
+        openArray.push(card1, card2);
+        console.log(openArray);
+        if (openArray[0].innerHTML == openArray[1].innerHTML) {
+            openArray[0].classList.remove("open");
+            openArray[0].classList.add("taken");
+            openArray[1].classList.remove("open");
+            openArray[1].classList.add("taken");
+            score++;
+            console.log("Karetnpaaar abeglegt");
+            greetNumber++;
+            console.log(greetNumber);
         }
         else {
-            for (let f = 0; f < openArray.length; f++) {
-                openArray[f].classList.remove("visible"); // "visible" wird entfernt
-                openArray[f].classList.add("hidden"); // und durch "hidden" ersetzt
-            }
+            card1.classList.remove("open");
+            card1.classList.add("hidden");
+            card2.classList.remove("open");
+            card2.classList.add("hidden");
         }
-        congrat();
-        openArray = [];
+        //        openCards Variabel wieder auf 0 setzen 
         openCards = 0;
+        //        opeList Array löschen 
+        openArray.splice(0, 2);
+        congrats();
     }
-    function filterCardsByClass(_filter) {
-        return cardArray.filter(card => card.classList.contains(_filter)); // Filter 
-    }
-    function congrat() {
-        let cardsTaken = filterCardsByClass("hidden");
-        if (cardsTaken.length == 0) {
-            alert("Super!!! :)");
+    function congrats() {
+        if (greetNumber == numPairs) {
+            alert("Glückwunsch!");
         }
-        cardsTaken = [];
     }
 })(MemoryAufgabe3 || (MemoryAufgabe3 = {}));
 //# sourceMappingURL=Aufgabe3.js.map
