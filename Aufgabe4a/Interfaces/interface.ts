@@ -3,10 +3,10 @@ namespace L04_Interfaces {
     export interface Studi {
         name: string;
         firstname: string;
-        matrikel: number;
+        matrikel: number;                       // hinzugefügt
+        studiengang: string;                    // hinzugefügt
         age: number;
         gender: boolean;
-        mager: string;
     }
 
     // Struktur des homogenen assoziativen Arrays, bei dem ein Datensatz der Matrikelnummer zugeordnet ist
