@@ -11,10 +11,9 @@ namespace Aufgabe4 {
     let checkRest: HTMLElement[] = [];
     let playerCounter: number = 1;
 
-
    
     function main(): void {
-        document.getElementById("addplayer").addEventListener("click", addPlayer);
+        document.getElementById("addplayer").addEventListener("click", addPlayer);                      // Startseite definieren
         document.getElementById("removeplayer").addEventListener("click", removePlayer);
         document.getElementById("sliderinfo").addEventListener("change", createSlider);        
         document.getElementById("start").addEventListener("click", start);
@@ -23,24 +22,24 @@ namespace Aufgabe4 {
     }
 
     function addPlayer(): void {
-        if (playerCounter < 4) {
+        if (playerCounter < 4) {                                                                        // nur 4 Spieler
             let player: HTMLElement = document.createElement("input");
             player.setAttribute("type", "text");
-            player.setAttribute("placeholder", "Spielernamen eingeben");
+            player.setAttribute("placeholder", "Spielernamen eingeben");                                // Name der Spieler eingeben
             player.setAttribute("name", "player");
             player.setAttribute("maxlength", "15");
             player.setAttribute("id", "player");
-            document.getElementById("playernames").appendChild(player);
+            document.getElementById("playernames").appendChild(player);                                 // Dass die Namen später im Memory angezeigt werden
             playerCounter++;
         }
     }
 
     function removePlayer(): void {
-        document.getElementById("player").remove();
+        document.getElementById("player").remove();                                                     // Button um einen Spieler zu löschen deklariert
         playerCounter--;
     }
 
-    function createSlider(): void {
+    function createSlider(): void {                                                                     // Slider für die verschiedenen Kartensets
         if (sliderAmount == 1) {
             let slider: HTMLElement = document.createElement("input");
             slider.setAttribute("type", "range");
@@ -58,7 +57,7 @@ namespace Aufgabe4 {
                 sliderValue.innerText = "Anzahl Kartenpaare: " + this.value;
             };
             document.getElementById("sliderbox").appendChild(sliderValue);
-        } else {
+        } else {                                                                                            // oder
             sliderUpdate();
         }
     }
@@ -70,7 +69,8 @@ namespace Aufgabe4 {
         createSlider();
     }
 
-        //shuffleArray
+    
+        //shuffleArray                                                                                     // um Karten zu mischen
     function shuffleArray(_array: any[]): any[] {
         for (var i: number = _array.length - 1; i > 0; i--) {
             var j: number = Math.floor(Math.random() * (i + 1));
@@ -81,66 +81,7 @@ namespace Aufgabe4 {
         return _array;
     }
     
-    
-    //Karte initialisieren     
-    function createCard(_content: string): void {
-        let card: HTMLElement = document.createElement("div");
-        card.innerHTML = "<p>" + _content + "</p>";
-        card.setAttribute("class", "card hidden");
-        cardArray.push(card);
-        checkRest.push(card);
-        card.addEventListener("click", clickHandler);
-    }
-
-    function clickHandler(_event: Event): void {
-        let target: HTMLElement = <HTMLElement>_event.target;
-        if (target.classList.contains("card")) {
-            cardsOpen++;
-            if (!(cardsOpen > 2) && target.classList.contains("hidden") && target != cardsOpenArray[0]) {
-                if (target.classList.contains("hidden")) {
-                    target.classList.remove("hidden");
-                    target.classList.add("open");
-                    cardsOpenArray.push(target);
-                }
-            } else {
-                cardsOpen--;
-            }
-            if (cardsOpen == 2) {
-                window.setTimeout(compareCards, 2000);
-            }
-        }
-    }
-
-    function compareCards(): void {
-
-        if (cardsOpenArray[0].innerHTML == cardsOpenArray[1].innerHTML) {
-            for (let i: number = 0; i < 2; i++) {
-                cardsOpenArray[i].classList.remove("open");
-                cardsOpenArray[i].classList.add("taken");
-            }
-            checkRest.splice(0, 2);
-        } else {
-            for (let i: number = 0; i < cardsOpenArray.length; i++) {
-                cardsOpenArray[i].classList.remove("open");
-                cardsOpenArray[i].classList.add("hidden");
-            }
-        }
-        cardsOpenArray = [];
-        cardsOpen = 0;
-        checkWin();
-    }
-
-
-
-    function checkWin(): void {
-        if (checkRest.length == 0) {
-            alert("Super gemacht!! :)");
-        }
-    }
-
-
-
-    // Memory-Spiel anzeigen
+      // Memory-Spiel anzeigen                                                                                                    // dass das Memory Spiel erst nach klick auf "Los gehts" erscheint:
     function start(): void {
         document.getElementById("startseite").style.display = "none";
         document.getElementById("info").style.display = "block";
@@ -169,5 +110,65 @@ namespace Aufgabe4 {
         }
 
     }
+    
+    //Karte initialisieren     
+    function createCard(_content: string): void {
+        let card: HTMLElement = document.createElement("div");
+        card.innerHTML = "<p>" + _content + "</p>";
+        card.setAttribute("class", "card hidden");
+        cardArray.push(card);
+        checkRest.push(card);
+        card.addEventListener("click", clickHandler);
+    }
 
-}
+    function clickHandler(_event: Event): void {
+        let target: HTMLElement = <HTMLElement>_event.target;
+        if (target.classList.contains("card")) {
+            cardsOpen++;
+            if (!(cardsOpen > 2) && target.classList.contains("hidden") && target != cardsOpenArray[0]) {                           // 2 Karten aufdecken
+                if (target.classList.contains("hidden")) {
+                    target.classList.remove("hidden");
+                    target.classList.add("open");
+                    cardsOpenArray.push(target);
+                }
+            } else {
+                cardsOpen--;
+            }
+            if (cardsOpen == 2) {
+                window.setTimeout(compareCards, 2000);
+            }
+        }
+    }
+
+    function compareCards(): void {
+
+        if (cardsOpenArray[0].innerHTML == cardsOpenArray[1].innerHTML) {                                       // wenn die Karten gleich sind - Status auf taken 
+            for (let i: number = 0; i < 2; i++) {
+                cardsOpenArray[i].classList.remove("open");
+                cardsOpenArray[i].classList.add("taken");
+            }
+            checkRest.splice(0, 2);
+        } else {
+            for (let i: number = 0; i < cardsOpenArray.length; i++) {                                              // wenn die Karten ungleich sind - Status auf hidden (immer noch auf dem Spielfeld)
+                cardsOpenArray[i].classList.remove("open");
+                cardsOpenArray[i].classList.add("hidden");
+            }
+        }
+        cardsOpenArray = [];                                                                                            // leeres Array für die Karten
+        cardsOpen = 0;
+        checkWin();
+    }
+
+
+
+    function checkWin(): void {                                                                                                 // Vergleich, wenn Spielfeld leer - Glückwunsch
+        if (checkRest.length == 0) {
+            alert("Super gemacht!! :)");
+        }
+    }
+
+
+
+
+
+} // Namespace schließen

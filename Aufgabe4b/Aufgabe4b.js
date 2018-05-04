@@ -10,7 +10,7 @@ var Aufgabe4;
     let checkRest = [];
     let playerCounter = 1;
     function main() {
-        document.getElementById("addplayer").addEventListener("click", addPlayer);
+        document.getElementById("addplayer").addEventListener("click", addPlayer); // Startseite definieren
         document.getElementById("removeplayer").addEventListener("click", removePlayer);
         document.getElementById("sliderinfo").addEventListener("change", createSlider);
         document.getElementById("start").addEventListener("click", start);
@@ -19,16 +19,16 @@ var Aufgabe4;
         if (playerCounter < 4) {
             let player = document.createElement("input");
             player.setAttribute("type", "text");
-            player.setAttribute("placeholder", "Spielernamen eingeben");
+            player.setAttribute("placeholder", "Spielernamen eingeben"); // Name der Spieler eingeben
             player.setAttribute("name", "player");
             player.setAttribute("maxlength", "15");
             player.setAttribute("id", "player");
-            document.getElementById("playernames").appendChild(player);
+            document.getElementById("playernames").appendChild(player); // Dass die Namen später im Memory angezeigt werden
             playerCounter++;
         }
     }
     function removePlayer() {
-        document.getElementById("player").remove();
+        document.getElementById("player").remove(); // Button um einen Spieler zu löschen deklariert
         playerCounter--;
     }
     function createSlider() {
@@ -60,7 +60,7 @@ var Aufgabe4;
         sliderAmount--;
         createSlider();
     }
-    //shuffleArray
+    //shuffleArray                                                                                     // um Karten zu mischen
     function shuffleArray(_array) {
         for (var i = _array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -69,6 +69,29 @@ var Aufgabe4;
             _array[j] = temp;
         }
         return _array;
+    }
+    // Memory-Spiel anzeigen                                                                                                    // dass das Memory Spiel erst nach klick auf "Los gehts" erscheint:
+    function start() {
+        document.getElementById("startseite").style.display = "none";
+        document.getElementById("info").style.display = "block";
+        document.getElementById("game").style.display = "block";
+        let inputs = document.getElementsByTagName("input");
+        let numPairs = parseInt(document.getElementById("slider").value);
+        for (let i = 0; i < playerCounter; i++) {
+            let playerDiv = document.createElement("div");
+            document.getElementById("info").appendChild(playerDiv);
+            playerDiv.innerHTML = inputs[i].value + ": " + playerPoints + " Punkte";
+        }
+        //Karten machen    
+        for (let i = 0; i < numPairs; i++) {
+            createCard(Aufgabe4.cards[document.getElementsByTagName("select").item(0).value].content[i]);
+            createCard(Aufgabe4.cards[document.getElementsByTagName("select").item(0).value].content[i]);
+        }
+        //Aufruf der Shuffle Algorithen   
+        shuffleArray(cardArray);
+        for (let i = 0; i < cardArray.length; i++) {
+            document.getElementById("playerbox").appendChild(cardArray[i]);
+        }
     }
     //Karte initialisieren     
     function createCard(_content) {
@@ -112,7 +135,7 @@ var Aufgabe4;
                 cardsOpenArray[i].classList.add("hidden");
             }
         }
-        cardsOpenArray = [];
+        cardsOpenArray = []; // leeres Array für die Karten
         cardsOpen = 0;
         checkWin();
     }
@@ -121,28 +144,5 @@ var Aufgabe4;
             alert("Super gemacht!! :)");
         }
     }
-    // Memory-Spiel anzeigen
-    function start() {
-        document.getElementById("startseite").style.display = "none";
-        document.getElementById("info").style.display = "block";
-        document.getElementById("game").style.display = "block";
-        let inputs = document.getElementsByTagName("input");
-        let numPairs = parseInt(document.getElementById("slider").value);
-        for (let i = 0; i < playerCounter; i++) {
-            let playerDiv = document.createElement("div");
-            document.getElementById("info").appendChild(playerDiv);
-            playerDiv.innerHTML = inputs[i].value + ": " + playerPoints + " Punkte";
-        }
-        //Karten machen    
-        for (let i = 0; i < numPairs; i++) {
-            createCard(Aufgabe4.cards[document.getElementsByTagName("select").item(0).value].content[i]);
-            createCard(Aufgabe4.cards[document.getElementsByTagName("select").item(0).value].content[i]);
-        }
-        //Aufruf der Shuffle Algorithen   
-        shuffleArray(cardArray);
-        for (let i = 0; i < cardArray.length; i++) {
-            document.getElementById("playerbox").appendChild(cardArray[i]);
-        }
-    }
-})(Aufgabe4 || (Aufgabe4 = {}));
+})(Aufgabe4 || (Aufgabe4 = {})); // Namespace schließen
 //# sourceMappingURL=Aufgabe4b.js.map

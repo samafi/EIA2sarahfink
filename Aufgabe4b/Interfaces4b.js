@@ -5,21 +5,18 @@ var Aufgabe4;
     Aufgabe4.cards = {};
     deck = {
         content: ["Hamburg", "Berlin", "München", "Köln", "Freiburg", "Stuttgart", "Furtwangen", "Linach", "Mannheim", "Heidelberg", "Ulm", "Essen", "Urach"],
-        cardColor: "#303030;",
         cardFont: "arial",
         cardAmount: "13"
     };
     Aufgabe4.cards["city"] = deck;
     deck = {
         content: ["Gans", "Ente", "Hahn", "Katze", "Gorilla", "Hund", "Schwein", "Schlange", "Hahn", "Krebs", "Vogel", "Fisch", "Libelle", "Biene", "Fliege", "Käfer"],
-        cardColor: "pink",
-        cardFont: "arial",
+        cardFont: "sans-serif",
         cardAmount: "16"
     };
     Aufgabe4.cards["animals"] = deck;
     deck = {
         content: ["Sarah", "Felix", "Ebru", "Burcu", "Timo", "Marco", "Fabio", "Laura"],
-        cardColor: "green",
         cardFont: "arial",
         cardAmount: "8"
     };
