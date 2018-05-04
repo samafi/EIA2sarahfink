@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang ="de">
+
+<!--
+Aufgabe 4b: Produktion des Memory-Menüs
+Name: Sarah Fink	
+Matrikel: 258286
+Datum: 03.04.2018
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+Er wurde nicht kopiert und auch nicht diktiert.
+-->
+
+
+<head>
+
+<title>Aufgabe 4b</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="Aufgabe4b.css">
+<script type="text/javascript" src="Aufgabe4b.js"></script>
+<script type="text/javascript" src="Interfaces4b.js"></script>
+
+</head>
+
+<body>
+	<div id="startseite">
+	
+
+	
+		<h2>Wieviele Spieler seid ihr? (Maximal 4)</h2>
+		<button id="addplayer">mehr Spieler</button>
+		<button id="removeplayer">weniger Spieler</button>
+		<div id="playernames">
+			<input type="text" placeholder="Spielernamen eingeben" name="player"
+				maxlength="14" />
+		</div>
+
+
+		<h2>mit welchem Kartendeck wollt ihr spielen?</h2>
+		<select id="sliderinfo" name="carddeck" onchange="createSlider()">
+			<option disabled selected>Kartendeck auswählen</option>
+
+			<option value="city">Städte</option>
+			<option value="animals">Tiere</option>
+			<option value="names">Namen</option>
+			
+		</select>
+
+		<h2>wieviele Karten sollen es sein?</h2>
+
+		<div id="sliderbox"></div>
+
+		<button id="start">Spiel starten</button>
+	</div>
+
+	<section id="info">
+		<h4>Spielerinfo</h4>
+	</section>
+	<section id="game">
+		<h3>Memory Spiel - Los geht's</h3>
+		<div id="playerbox"></div>
+	</section>
+</body>
+</html>
