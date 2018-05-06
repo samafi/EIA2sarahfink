@@ -37,10 +37,10 @@ namespace Aufgabe4 {
 
 
 
-    export interface info {
+    export interface info {                                                             //Beginn Score 
         player: string;
         score: number;
     }
 
-    let info: info[] = [];
+    let info: info[] = []; 
 }
