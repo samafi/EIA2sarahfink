@@ -1,6 +1,14 @@
-namespace Aufgabe6 {
+/*
+Aufgabe: 06 
+Name: Sarah Fink
+Datum: 27.05.18
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+namespace Aufgabe06 {
     window.addEventListener("load", init);
-    let address: string = "https://app-aufgabe6.herokuapp.com";
+    let address: string = "https://eia-heroku-app.herokuapp.com";
 
     let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
 

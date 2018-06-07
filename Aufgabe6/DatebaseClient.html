@@ -1,25 +1,14 @@
-<!--
-Aufgabe 6: ClientServer: StudiVZ
-Name: Sarah Fink	
-Matrikel: 258286
-Datum: 26.05.2018
--->
-    
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>DatabaseClient</title>
+<title>Database</title>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="DatabBaseClient.css" type="text/css" media="screen"/>
-<script src="interfaces6.js" type="text/javascript" charset="utf-8"></script>
-<script src="Process.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="DatabaseClient.css" type="text/css" media="screen"/>
+<script src="Interfaces.js" type="text/javascript" charset="utf-8"></script>
+<script src="ProcessForm.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-	<form action="http://localhost:8200" method="get"></form>
-	
+	<form action="https://eia-heroku-app.herokuapp.com" method="get"></form>
 	<fieldset id="input">
 		<legend> Type student data here </legend>
 		<input type="text" name="name" placeholder="name"/>
@@ -27,8 +16,8 @@ Datum: 26.05.2018
 		<input type="text" name="matrikel" placeholder="matrikel"/>
 		<select name="studiengang"> 
 			<option value="MKB">MKB</option>
-			<option value="OMB">OMB</option>
 			<option value="MIB">MIB</option>
+			<option value="OMB">OMB</option>
 		</select>
 		<input type="number" name="age" placeholder="age" min="1" max="120"/>
 		<input type="radio" name="gender" value="male" id="male"/>

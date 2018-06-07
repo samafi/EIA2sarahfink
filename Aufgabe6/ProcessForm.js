@@ -1,7 +1,14 @@
-var Aufgabe6;
-(function (Aufgabe6) {
+/*
+Aufgabe: 06
+Name: Sarah Fink
+Datum: 27.05.18
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+var Aufgabe06;
+(function (Aufgabe06) {
     window.addEventListener("load", init);
-    let address = "https://app-aufgabe6.herokuapp.com";
+    let address = "https://eia-heroku-app.herokuapp.com";
     let inputs = document.getElementsByTagName("input");
     function init(_event) {
         console.log("Init");
@@ -66,5 +73,5 @@ var Aufgabe6;
             output.value += xhr.response;
         }
     }
-})(Aufgabe6 || (Aufgabe6 = {}));
-//# sourceMappingURL=Process.js.map
+})(Aufgabe06 || (Aufgabe06 = {}));
+//# sourceMappingURL=ProcessForm.js.map
