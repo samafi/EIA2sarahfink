@@ -1,4 +1,4 @@
-namespace Aufgabe6 {
+namespace Aufgabe8 {
     window.addEventListener("load", init);
     let address: string = "https://eia-heroku-app";
 
