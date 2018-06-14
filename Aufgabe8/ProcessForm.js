@@ -1,7 +1,7 @@
-var Aufgabe8;
-(function (Aufgabe8) {
+var aufgabe8;
+(function (aufgabe8) {
     window.addEventListener("load", init);
-    let address = "https://eia2-heroku-app.com";
+    let address = "https://eia-heroku-app.com";
     let inputs = document.getElementsByTagName("input");
     function init(_event) {
         console.log("Init");
@@ -66,5 +66,5 @@ var Aufgabe8;
             output.value += xhr.response;
         }
     }
-})(Aufgabe8 || (Aufgabe8 = {}));
+})(aufgabe8 || (aufgabe8 = {}));
 //# sourceMappingURL=ProcessForm.js.map
