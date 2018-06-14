@@ -3,7 +3,7 @@ var aufgabe8;
     window.addEventListener("load", init);
     let address = "https://eia-heroku-app.com";
     let inputs = document.getElementsByTagName("input");
-    function init(_event) {
+    function init(_event) { 
         console.log("Init");
         let insertButton = document.getElementById("insert");
         let refreshButton = document.getElementById("refresh");
