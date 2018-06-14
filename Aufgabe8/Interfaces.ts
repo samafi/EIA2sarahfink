@@ -1,4 +1,4 @@
-namespace Aufgabe8 {
+namespace aufgabe8 {
     // Struktur des heterogenen assoziativen Arrays als Datensatz 
     export interface Studi {
         name: string;
