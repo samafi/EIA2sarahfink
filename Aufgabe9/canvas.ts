@@ -20,11 +20,11 @@ namespace Aufgabe9_Canvas {
         crc2.fillRect(0, 0, 360, 500);
 
         //Bubbles
-        drawBubbles(20, 220, 80, 260, 10)
-        drawBubbles(220, 40, 80, 160, 8)
+        drawBubbles(10, 220, 80, 260, 10)
+        drawBubbles(220, 50, 100, 420, 10)
 
         //Fische (nach links) Koordinaten 
-        drawFish1(100, 100, 1);                  // >links-rechts<, oben(kleine Zahl) unten (große Zahl),Objektgröße 
+        drawFish1(100, 100, 0.7);                  // >links-rechts<, oben(kleine Zahl) unten (große Zahl),Objektgröße 
         drawFish1(280, 460, 1);
         drawFish1(340, 150, 0.3);
         drawFish1(210, 320, 0.3);
