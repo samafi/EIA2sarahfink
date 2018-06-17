@@ -40,6 +40,30 @@ namespace Aufgabe9_Canvas {
         drawFish2(120, 340, 0.4);
         drawFish2(200, 50, 0.4);
         
+         //Fische, die math.random sind (nach links)
+        for (let i: number = 0; i<5; i++) {
+            let x : number = Math.random() * (crc2.canvas.width-45);
+            let y: number = Math.random() * 500;
+            drawFish (x,y);
+            }
+        
+        
+    function drawFish (_x:number, _y:number) : void {
+        crc2.fillStyle = "rgb(255,228,181)";
+        
+        crc2.beginPath();
+        crc2.moveTo(_x,_y);
+        crc2.quadraticCurveTo(_x+25, _y-35, _x+50, _y);
+        crc2.lineTo(_x+65, _y+15);
+        crc2.lineTo(_x+65, _y-15);
+        crc2.lineTo(_x+50, _y);
+        crc2.quadraticCurveTo(_x+25, _y+35, _x, _y);
+        
+        
+        crc2.stroke();
+        crc2.fill();
+        }
+        
         
         //Seegras
         drawSeagrass(340, 640, 1.5);
@@ -80,13 +104,13 @@ namespace Aufgabe9_Canvas {
         crc2.moveTo(_x - (20 * _s), _y - (20 * _s));
         crc2.quadraticCurveTo(_x - (60 * _s), _y - (60 * _s), _x - (60 * _s), _y - (20 * _s));
         crc2.quadraticCurveTo(_x - (60 * _s), _y + (20 * _s), _x - (20 * _s), _y - (20 * _s));
-
+          
 
         crc2.stroke();
         crc2.fillStyle = "rgb(138,43,226)"; //Lilafarbig
         crc2.fill();
     }
-    
+ 
 
     
     
