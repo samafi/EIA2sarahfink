@@ -8,7 +8,7 @@ var Aufgabe9_Canvas;
         crc2 = canvas.getContext("2d");
         console.log(crc2);
         // Kiste
-        // Boden
+        // Boden 
         crc2.fillStyle = "rgb(210,180,140)";
         crc2.fillRect(0, 500, 360, 640);
         // Wasser

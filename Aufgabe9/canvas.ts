@@ -11,9 +11,11 @@ namespace Aufgabe9_Canvas {
         // Kiste
 
 
-        // Boden
+        // Boden 
         crc2.fillStyle = "rgb(210,180,140)"; 
-        crc2.fillRect(0, 500, 360, 640);
+        crc2.fillRect(0, 500, 360, 640); 
+        
+
         
         // Wasser
         crc2.fillStyle = "rgb(0,154,205)";
@@ -165,3 +167,4 @@ namespace Aufgabe9_Canvas {
         
     }
 }
+    
