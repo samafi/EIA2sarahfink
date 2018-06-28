@@ -56,6 +56,7 @@ namespace L10 {
             fish.b = Math.random() * 255;
             fishes.push(fish);
         }
+        
 
         for (let i: number = 0; i < n - 2; i++) {
             let bubble: Bubbles = new Bubbles();
