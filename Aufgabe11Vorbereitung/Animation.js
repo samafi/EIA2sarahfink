@@ -20,8 +20,6 @@ var L11_Inheritance;
         animate();
     }
     function insertNewObject(_event) {
-        // let star: DavidStar = new DavidStar("#ffff00");
-        //stars.push(star);
         let _x = _event.pageX;
         let _y = _event.pageY;
         let zufall = Math.random() * 13;

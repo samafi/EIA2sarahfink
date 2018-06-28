@@ -25,8 +25,7 @@ namespace L11_Inheritance {
     }
 
     function insertNewObject(_event: MouseEvent): void {
-       // let star: DavidStar = new DavidStar("#ffff00");
-        //stars.push(star);
+
         let _x: number = _event.pageX;
         let _y: number = _event.pageY;
 
