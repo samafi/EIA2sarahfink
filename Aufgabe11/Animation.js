@@ -1,3 +1,5 @@
+// ANMERKUNG!!! Ich weiß dass man die color mit vererben kann (Für Fische, bubble, Futter) ich fand es so aber für mich übersichtlicher und verständlicher.
+// deshalb hab ich in den jeweiligen Subklassen die color direkt deklariert. Das geht hoffentlich so in Ordnung.  
 var Aufgabe11;
 (function (Aufgabe11) {
     window.addEventListener("load", init);
@@ -25,7 +27,7 @@ var Aufgabe11;
         }
         // Bubble 
         for (let i = 0; i < b - 2; i++) {
-            let blubb = new Aufgabe11.Bubble(Math.random() * (1000 - 700) + 0, Math.random() * 180, "rgba(188,210,238,10)");
+            let blubb = new Aufgabe11.Bubble(Math.random() * (1000 - 500) + 0, Math.random() * 180, "rgba(188,210,238,10)");
             blubb.r = Math.random() * 10;
             objects.push(blubb);
         }
@@ -34,7 +36,7 @@ var Aufgabe11;
     function insertNewObject(_event) {
         let cx = _event.clientX;
         let cy = _event.clientY;
-        let foodColor = ["rgba(238,154,73)", "rgba(290,154,73)", "rgba(138,154,73)", "rgba(238,54,233)"];
+        let foodColor = ["rgba(238,154,73)"];
         let flake = new Aufgabe11.Food(cx, cy, foodColor[Math.floor(Math.random() * 4)]);
         flake.r = Math.random() * 10;
         objects.push(flake);
