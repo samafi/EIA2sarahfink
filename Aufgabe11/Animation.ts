@@ -25,6 +25,7 @@ namespace Aufgabe11 {
         console.log(imgData);
 
         canvas.addEventListener("click", insertNewObject);
+        
         canvas.addEventListener("touchstart", insertNewObject);
         
         // Fische
@@ -44,16 +45,47 @@ namespace Aufgabe11 {
         animate();
 
     }
-
+    
+    //Futterflocken
     function insertNewObject(_event: MouseEvent): void {
-        let cx: number = _event.clientX;
-        let cy: number = _event.clientY;
-        let foodColor: string[] = ["rgba(238,154,73)"]
+        let cx: number = _event.pageX
+        let cy: number = _event.pageY;
+        let foodColor: string[] = ["rgba(238,154,73)", "rgba(290,154,73)", "rgba(138,154,73)", "rgba(238,54,233)"]
         let flake: Food = new Food(cx, cy, foodColor[Math.floor(Math.random()* 4)]);
         flake.r = Math.random() * 10;
         objects.push(flake);
     }
 
+   /* function insertNewObject(_event: MouseEvent): void {
+        
+        let cx: number = _event.clientX;
+        let cy: number = _event.clientY;
+    
+        for (let i: number = 0; i < 3; i++) {
+        let foodColor: string[] = []
+        let flake: Food = new Food(cx, cy);
+                    objects.push(flake);
+        cx += Math.random() * 0;
+         cx += Math.random() * 0;
+                    cy += Math.random() * 0;
+
+
+
+    }       */ 
+                   /*         function insertFlakes(_event: MouseEvent): void {
+        let newPositionX: number = _event.clientX;
+        let newPositionY: number = _event.clientY;
+        
+        for (let i: number = 0; i < 4; i++) {
+            let flakes: Flake = new Flake(newPositionX, newPositionY);
+            movingObjects.push(flakes);
+            //Bereich, in dem die Futterflocken liegen bleiben, damit sie nicht auf einer Linie liegen
+            newPositionX += Math.random() * 60;
+            newPositionX -= Math.random() * 60;
+            newPositionY += Math.random() * 30;
+        }
+    } 
+}*/
 
     function animate(): void {
 

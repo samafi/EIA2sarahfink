@@ -12,15 +12,10 @@ var Aufgabe11;
         }
         draw() {
             Aufgabe11.crc2.beginPath();
-            Aufgabe11.crc2.moveTo(this.x - 2, this.y);
-            Aufgabe11.crc2.lineTo(this.x + 4, this.y + 4);
-            Aufgabe11.crc2.lineTo(this.x + 3, this.y - 3);
-            Aufgabe11.crc2.lineTo(this.x, this.y + 2);
-            Aufgabe11.crc2.lineTo(this.x + -1, this.y + 3);
-            Aufgabe11.crc2.lineTo(this.x - 2, this.y);
+            Aufgabe11.crc2.arc(this.x, this.y, 3, 0, 5 * Math.PI);
             Aufgabe11.crc2.closePath();
-            Aufgabe11.crc2.stroke();
-            Aufgabe11.crc2.fillStyle = this.color;
+            Aufgabe11.crc2.fillStyle = "rgb(80, 20, 20)";
+            Aufgabe11.crc2.fill();
         }
     }
     Aufgabe11.Food = Food;
