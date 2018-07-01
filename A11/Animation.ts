@@ -48,7 +48,7 @@ namespace Aufgabe_11 {
         for (let i: number = 0; i < 4; i++) {
             let flakes: Flake = new Flake(newPositionX, newPositionY);
             movingObjects.push(flakes);
-            //Bereich, in dem die Futterflocken liegen bleiben, damit sie nicht auf einer Linie liegen
+            //Bodenbereich: nicht alle auf der gleichen Linie
             newPositionX += Math.random() * 60;
             newPositionX -= Math.random() * 60;
             newPositionY += Math.random() * 30;
