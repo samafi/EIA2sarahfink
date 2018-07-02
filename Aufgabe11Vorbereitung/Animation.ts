@@ -1,8 +1,8 @@
-namespace L11_Inheritance {
+namespace Vorbereitung {
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
     let stars: DavidStar[] = [];
-    let n: number = 30;
+    let n: number = 15;
 
     //let rects: Rect[] = [];
     function init(_event: Event): void {
@@ -13,42 +13,43 @@ namespace L11_Inheritance {
         canvas.addEventListener("click", insertNewObject);
 
         for (let i: number = 0; i < n; i++) {
-            let star: DavidStar = new DavidStar("#cc0000");
+            let star: DavidStar = new DavidStar("#ffbe1c");
             stars.push(star);
-            let rect: Rect = new Rect("#ff9990");
+
+            let rect: Rect = new Rect("#00b6d6");
             stars.push(rect);
-            let circle: Circle = new Circle("#ff8000");
-            stars.push(circle);
         }
 
         animate();
     }
 
     function insertNewObject(_event: MouseEvent): void {
+        let randomObject: number = Math.floor(Math.random() * 3);
+        let newPositionX: number = _event.clientX;
+        let newPositonY: number = _event.clientY;
 
-        let _x: number = _event.pageX;
-        let _y: number = _event.pageY;
+        switch (randomObject) {
+            case 0:
+                let star: DavidStar = new DavidStar("#4a5b77");
+                star.x = newPositionX;
+                star.y = newPositonY;
+                stars.push(star);
+                break;
 
-        let zufall: number = Math.random() * 13;
+            case 1:
+                let rect: Rect = new Rect("#efa017");
+                rect.x = newPositionX;
+                rect.y = newPositonY;
+                stars.push(rect);
+                break;
 
-        if (zufall < 4) {
-            let star: DavidStar = new DavidStar("#8080ff");
-            star.x = _x;
-            star.y =_y;
-            stars.push(star);
-        } else if (zufall < 8) {
-            let rect: Rect = new Rect("#a64dff");
-            rect.x = _x;
-            rect.y = _y;
-            stars.push(rect);
-        } else {
-            let circle: Circle = new Circle("#99bbff");
-            circle.x = _x;
-            circle.y = _y;
-            stars.push(circle);
+            case 2:
+                let blueDavidStar: DavidStarBlue = new DavidStarBlue("#1adbce");
+                blueDavidStar.x = newPositionX;
+                blueDavidStar.y = newPositonY;
+                stars.push(blueDavidStar);
+                break;
         }
-
-        
     }
 
     function animate(): void {

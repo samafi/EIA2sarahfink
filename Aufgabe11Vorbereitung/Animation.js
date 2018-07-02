@@ -1,50 +1,50 @@
-var L11_Inheritance;
-(function (L11_Inheritance) {
+var Vorbereitung;
+(function (Vorbereitung) {
     window.addEventListener("load", init);
     let stars = [];
-    let n = 30;
+    let n = 15;
     //let rects: Rect[] = [];
     function init(_event) {
         let canvas = document.getElementsByTagName("canvas")[0];
-        L11_Inheritance.crc2 = canvas.getContext("2d");
-        console.log(L11_Inheritance.crc2);
+        Vorbereitung.crc2 = canvas.getContext("2d");
+        console.log(Vorbereitung.crc2);
         canvas.addEventListener("click", insertNewObject);
         for (let i = 0; i < n; i++) {
-            let star = new L11_Inheritance.DavidStar("#cc0000");
+            let star = new Vorbereitung.DavidStar("#ffbe1c");
             stars.push(star);
-            let rect = new L11_Inheritance.Rect("#ff9990");
+            let rect = new Vorbereitung.Rect("#00b6d6");
             stars.push(rect);
-            let circle = new L11_Inheritance.Circle("#ff8000");
-            stars.push(circle);
         }
         animate();
     }
     function insertNewObject(_event) {
-        let _x = _event.pageX;
-        let _y = _event.pageY;
-        let zufall = Math.random() * 13;
-        if (zufall < 4) {
-            let star = new L11_Inheritance.DavidStar("#8080ff");
-            star.x = _x;
-            star.y = _y;
-            stars.push(star);
-        }
-        else if (zufall < 8) {
-            let rect = new L11_Inheritance.Rect("#a64dff");
-            rect.x = _x;
-            rect.y = _y;
-            stars.push(rect);
-        }
-        else {
-            let circle = new L11_Inheritance.Circle("#99bbff");
-            circle.x = _x;
-            circle.y = _y;
-            stars.push(circle);
+        let randomObject = Math.floor(Math.random() * 3);
+        let newPositionX = _event.clientX;
+        let newPositonY = _event.clientY;
+        switch (randomObject) {
+            case 0:
+                let star = new Vorbereitung.DavidStar("#4a5b77");
+                star.x = newPositionX;
+                star.y = newPositonY;
+                stars.push(star);
+                break;
+            case 1:
+                let rect = new Vorbereitung.Rect("#efa017");
+                rect.x = newPositionX;
+                rect.y = newPositonY;
+                stars.push(rect);
+                break;
+            case 2:
+                let blueDavidStar = new Vorbereitung.DavidStarBlue("#1adbce");
+                blueDavidStar.x = newPositionX;
+                blueDavidStar.y = newPositonY;
+                stars.push(blueDavidStar);
+                break;
         }
     }
     function animate() {
         window.setTimeout(animate, 10);
-        L11_Inheritance.crc2.clearRect(0, 0, L11_Inheritance.crc2.canvas.width, L11_Inheritance.crc2.canvas.height);
+        Vorbereitung.crc2.clearRect(0, 0, Vorbereitung.crc2.canvas.width, Vorbereitung.crc2.canvas.height);
         moveObjects();
         drawObjects();
     }
@@ -58,5 +58,5 @@ var L11_Inheritance;
             stars[i].draw();
         }
     }
-})(L11_Inheritance || (L11_Inheritance = {}));
+})(Vorbereitung || (Vorbereitung = {}));
 //# sourceMappingURL=Animation.js.map

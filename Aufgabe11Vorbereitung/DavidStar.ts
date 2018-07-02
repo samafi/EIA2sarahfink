@@ -1,4 +1,4 @@
-namespace L11_Inheritance {
+namespace Vorbereitung {
     export class DavidStar {
         x: number;
         y: number;
@@ -8,7 +8,7 @@ namespace L11_Inheritance {
             this.setRandomPosition();
             this.color = _color;
         }
-
+    
         setRandomPosition(): void {
             this.x = Math.random() * crc2.canvas.width;
             this.y = Math.random() * crc2.canvas.height;
