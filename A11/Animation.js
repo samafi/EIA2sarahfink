@@ -10,11 +10,13 @@ var Aufgabe_11;
         canvas.addEventListener("click", insertFlakes);
         let width = canvas.width;
         let height = canvas.height;
-        // (Background.ts)
-        let hintergrund = new Aufgabe_11.Background();
-        hintergrund.paint();
-        imgData = Aufgabe_11.crc2.getImageData(0, 0, canvas.width, canvas.height); //Canvas als Bild gespeichert
-        console.log(imgData);
+        Aufgabe_11.drawBackground(); //Background aus separater ts Datei erstellen
+        imgData = Aufgabe_11.crc2.getImageData(0, 0, canvas.width, canvas.height);
+        /*  // (Background.ts)
+           let hintergrund: Background = new Background();
+          hintergrund.paint();
+          imgData = crc2.getImageData(0, 0, canvas.width, canvas.height); //Canvas als Bild gespeichert
+          console.log(imgData); */
         //Fische 
         for (let i = 0; i < 9; i++) {
             let fish = new Aufgabe_11.Fish();

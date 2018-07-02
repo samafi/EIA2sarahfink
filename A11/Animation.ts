@@ -16,11 +16,14 @@ namespace Aufgabe_11 {
         let width: number = canvas.width;
         let height: number = canvas.height;
         
-        // (Background.ts)
+        drawBackground(); //Background aus separater ts Datei erstellen
+        imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+        
+      /*  // (Background.ts)
          let hintergrund: Background = new Background();
         hintergrund.paint();
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height); //Canvas als Bild gespeichert
-        console.log(imgData);
+        console.log(imgData); */
         
         //Fische 
         for (let i: number = 0; i < 9; i++) {

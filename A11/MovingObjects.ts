@@ -4,15 +4,15 @@ namespace Aufgabe_11 {
         y: number;
         
         constructor() {
-            //    
+               
         }
         
         move(): void {
-            //    
+               
         }
         
         draw(): void {
-            //    
+              
         }
     } 
 }
