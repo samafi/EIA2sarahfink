@@ -13,10 +13,10 @@ namespace Vorbereitung {
         canvas.addEventListener("click", insertNewObject);
 
         for (let i: number = 0; i < n; i++) {
-            let star: DavidStar = new DavidStar("#ffbe1c");
+            let star: DavidStar = new DavidStar("#528B8B");
             stars.push(star);
 
-            let rect: Rect = new Rect("#00b6d6");
+            let rect: Rect = new Rect("#CD9B9B");
             stars.push(rect);
         }
 
@@ -30,24 +30,24 @@ namespace Vorbereitung {
 
         switch (randomObject) {
             case 0:
-                let star: DavidStar = new DavidStar("#4a5b77");
+                let star: DavidStar = new DavidStar("#C71585");
                 star.x = newPositionX;
                 star.y = newPositonY;
                 stars.push(star);
                 break;
 
             case 1:
-                let rect: Rect = new Rect("#efa017");
+                let rect: Rect = new Rect("#CD4F39");
                 rect.x = newPositionX;
                 rect.y = newPositonY;
                 stars.push(rect);
                 break;
 
             case 2:
-                let blueDavidStar: DavidStarBlue = new DavidStarBlue("#1adbce");
-                blueDavidStar.x = newPositionX;
-                blueDavidStar.y = newPositonY;
-                stars.push(blueDavidStar);
+                let redDavidStar: DavidStarRed = new DavidStarRed("#CD2626");
+                redDavidStar.x = newPositionX;
+                redDavidStar.y = newPositonY;
+                stars.push(redDavidStar);
                 break;
         }
     }
