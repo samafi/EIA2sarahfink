@@ -7,7 +7,7 @@ var Abschlussarbeit;
     let m = 3;
     //Weihnachtsbäume
     let trees = [];
-    let n = 5;
+    let n = 7;
     //Highscore
     let highscore = 0;
     //Korb 
@@ -115,15 +115,15 @@ var Abschlussarbeit;
     function updateHighscore(points) {
         highscore += points;
         if (highscore >= 200) {
-            alert("Glückwunsch!");
+            alert("You did a great job!");
             highscore = 0;
         }
     }
     //Funktion die den Punktestand anzeigt
     function showHighscore() {
-        Abschlussarbeit.crc2.font = "30px Arial";
-        Abschlussarbeit.crc2.fillStyle = "#000000";
-        Abschlussarbeit.crc2.fillText("Punkte: " + highscore, 10, 50);
+        Abschlussarbeit.crc2.font = "28px Sans-Serif";
+        Abschlussarbeit.crc2.fillStyle = "#2E2E2E";
+        Abschlussarbeit.crc2.fillText("Score: " + highscore, 20, 50);
     }
 })(Abschlussarbeit || (Abschlussarbeit = {}));
 //# sourceMappingURL=Hauptprogramm.js.map

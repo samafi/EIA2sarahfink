@@ -12,7 +12,7 @@ namespace Abschlussarbeit {
     //Weihnachtsbäume
 
     let trees: Tree[] = [];
-    let n: number = 5;
+    let n: number = 7;
 
     //Highscore
 
@@ -160,7 +160,7 @@ namespace Abschlussarbeit {
     function updateHighscore( points: number ): void {
         highscore += points;
         if ( highscore >= 200 ) {
-            alert( "Glückwunsch!" );
+            alert( "You did a great job!" );
             highscore = 0;
         }
     }
@@ -168,8 +168,8 @@ namespace Abschlussarbeit {
     //Funktion die den Punktestand anzeigt
 
     function showHighscore(): void {
-        crc2.font = "30px Arial";
-        crc2.fillStyle = "#000000";
-        crc2.fillText( "Punkte: " + highscore, 10, 50 );
+        crc2.font = "28px Sans-Serif";
+        crc2.fillStyle = "#2E2E2E";
+        crc2.fillText( "Score: " + highscore, 20, 50 );
     }
 }

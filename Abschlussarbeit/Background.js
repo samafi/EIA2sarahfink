@@ -14,5 +14,5 @@ var Abschlussarbeit;
         }
     }
     Abschlussarbeit.Background = Background;
-})(Abschlussarbeit || (Abschlussarbeit = {}));
+})(Abschlussarbeit || (Abschlussarbeit = {})); //namespace schließen
 //# sourceMappingURL=Background.js.map

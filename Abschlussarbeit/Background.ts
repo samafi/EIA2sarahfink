@@ -19,7 +19,7 @@ namespace Abschlussarbeit {
 
         }
 
-    /*   //Sonne
+      /* //Sonne
         drawSun( _x: number, _y: number, _radius: number ): void {
             crc2.beginPath();
             crc2.fillStyle = "rgb(255,255,0)";
@@ -28,6 +28,12 @@ namespace Abschlussarbeit {
             crc2.stroke();
             crc2.fill();
        }
-        */
    }
+       */
 }
+
+    } //namespace schließen
+
+
+    
+    
