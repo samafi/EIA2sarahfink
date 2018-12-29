@@ -5,7 +5,7 @@ namespace Abschlussarbeit {
         public paint(): void {
 
             this.drawBackground( 100 );
-            this.drawSun( 830, 70, 50 ); 
+           /* this.drawSun( 830, 70, 50 ); */
 
         }
 
@@ -19,7 +19,7 @@ namespace Abschlussarbeit {
 
         }
 
-        //Sonne
+    /*   //Sonne
         drawSun( _x: number, _y: number, _radius: number ): void {
             crc2.beginPath();
             crc2.fillStyle = "rgb(255,255,0)";
@@ -28,5 +28,6 @@ namespace Abschlussarbeit {
             crc2.stroke();
             crc2.fill();
        }
+        */
    }
 }
