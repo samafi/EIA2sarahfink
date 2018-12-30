@@ -21,25 +21,16 @@ namespace Abschlussarbeit2 {
             this.x += 0;
             this.y += 2;
         }
-
-        /*draw(): void {
-            crc2.beginPath();
-            crc2.moveTo (this.x,this.y);
-            crc2.lineTo (this.x-12.5, this.y+40);
-            crc2.lineTo (this.x+12.5, this.y+40);
-            crc2.fillStyle = this.color;
-            crc2.closePath();
-            crc2.stroke();
-            crc2.fill();
-        } */
         
         
         draw(): void {
             crc2.strokeStyle = this.color;
             crc2.beginPath();
+            
             //horizontal
             crc2.moveTo (this.x,this.y);
             crc2.lineTo (this.x+10, this.y);
+            
             //vertikal
             crc2.moveTo(this.x+5, this.y-5);
             crc2.lineTo(this.x+5, this.y+5);

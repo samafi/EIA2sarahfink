@@ -2,33 +2,44 @@ var Abschlussarbeit2;
 (function (Abschlussarbeit2) {
     window.addEventListener("load", init);
     let imgData;
+  
+    //Pop-Up Fenster mit kurzer Spielerklärung
     //  alert("Benutze die Pfeiltasten um den bösen Schneeflocken auszuweichen! Hast du zu viele Minuspunkte, verlierst du..")
-    //MovingObject
+    
+
     let movingObjects = [];
     let m = 3;
+    
     //Weihnachtsbäume
     let trees = [];
     let n = 5;
-    //Highscore
+    
+    //Score
     let highscore = 0;
+    
     //Schneemann 
     let snowman = new Abschlussarbeit2.Snowman();
     snowman.x = 450;
     snowman.y = 630;
+    
     //Funktion init
     function init(_event) {
         let canvas = document.getElementsByTagName("canvas")[0];
         Abschlussarbeit2.crc2 = canvas.getContext("2d");
         console.log(Abschlussarbeit2.crc2);
+        
         //Hintergrund
         let hg = new Abschlussarbeit2.Background;
         hg.paint();
         imgData = Abschlussarbeit2.crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
+       
         //Schneemann auf dem Smartphone steuern 
         document.addEventListener('keydown', moveSnowman);
+        
         //Schneemann auf Handy/Tablet steuern 
         document.addEventListener('touchmove', moveSnowmanTouch);
+        
         //Weihnachtsbäume
         for (let i = 0; i < n; i++) {
             let tree = new Abschlussarbeit2.Tree();
@@ -40,6 +51,8 @@ var Abschlussarbeit2;
         checkBubblePosition();
         createFlakes();
     }
+   
+    		
     //Funktion für die Animation
     function animate() {
         window.setTimeout(animate, 10);
@@ -47,6 +60,7 @@ var Abschlussarbeit2;
         moveObjects();
         drawObjects();
     }
+   
     //Überprüfung ob Schneemann und Schneeflocke auf gleicher Höhe
     function checkBubblePosition() {
         window.setTimeout(checkBubblePosition, 10);
@@ -59,6 +73,7 @@ var Abschlussarbeit2;
             }
         }
     }
+    
     //Funktion für ständige Schneeflocken
     function createFlakes() {
         window.setTimeout(createFlakes, 500);
@@ -78,6 +93,7 @@ var Abschlussarbeit2;
                 break;
         }
     }
+    
     //Funktion für die Steuerung
     function moveSnowman(_event) {
         if (_event.key == "ArrowRight") {
@@ -87,6 +103,7 @@ var Abschlussarbeit2;
             snowman.moveLeft();
         }
     }
+    
     //Funktion für Smartphone/Tabletsteuerung 
     function moveSnowmanTouch(_event) {
         if (_event.changedTouches[0].clientX < Abschlussarbeit2.crc2.canvas.clientWidth / 2) {
@@ -97,13 +114,8 @@ var Abschlussarbeit2;
         }
         console.log(_event, Abschlussarbeit2.crc2.canvas.clientWidth / 2);
     }
-    //Funktion für die Schneeflocken, die runter fallen
-    function moveObjects() {
-        for (let i = 0; i < movingObjects.length; i++) {
-            movingObjects[i].move();
-        }
-    }
-    //Funktion welche bewegte Elemente zeichnet
+    
+  //Funktion welche bewegte Elemente zeichnet
     function drawObjects() {
         for (let i = 0; i < trees.length; i++)
             trees[i].draw();
@@ -112,6 +124,16 @@ var Abschlussarbeit2;
         snowman.draw();
         showHighscore();
     }
+    
+    //Funktion für die Schneeflocken, die runter fallen
+    function moveObjects() {
+        for (let i = 0; i < movingObjects.length; i++) {
+            movingObjects[i].move();
+        }
+    }
+    
+    
+    
     //Funktion für die Punktezahl
     function updateHighscore(points) {
         highscore += points;
@@ -120,6 +142,7 @@ var Abschlussarbeit2;
             highscore = 0;
         }
     }
+    
     //Funktion die den Punktestand anzeigt
     function showHighscore() {
         Abschlussarbeit2.crc2.font = "30px Lato";

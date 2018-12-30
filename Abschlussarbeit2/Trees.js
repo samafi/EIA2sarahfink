@@ -10,6 +10,7 @@ var Abschlussarbeit2;
             Abschlussarbeit2.crc2.stroke();
             Abschlussarbeit2.crc2.fill();
         }
+        // Baum zeichnen      
         draw() {
             Abschlussarbeit2.crc2.beginPath();
             Abschlussarbeit2.crc2.fillStyle = "rgb(0,115,0)";

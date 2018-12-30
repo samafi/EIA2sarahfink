@@ -3,7 +3,7 @@ var Abschlussarbeit2;
     class blueFlake extends Abschlussarbeit2.MovingObject {
         constructor() {
             super();
-            this.points = -6;
+            this.points = -6; // Punktezahl 
             this.color = "rgb(218,165,32)"; // Hellblaue Schneeflocke
             this.setRandomPosition();
         }

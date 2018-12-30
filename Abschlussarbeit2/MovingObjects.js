@@ -12,16 +12,6 @@ var Abschlussarbeit2;
             this.x += 0;
             this.y += 2;
         }
-        /*draw(): void {
-            crc2.beginPath();
-            crc2.moveTo (this.x,this.y);
-            crc2.lineTo (this.x-12.5, this.y+40);
-            crc2.lineTo (this.x+12.5, this.y+40);
-            crc2.fillStyle = this.color;
-            crc2.closePath();
-            crc2.stroke();
-            crc2.fill();
-        } */
         draw() {
             Abschlussarbeit2.crc2.strokeStyle = this.color;
             Abschlussarbeit2.crc2.beginPath();

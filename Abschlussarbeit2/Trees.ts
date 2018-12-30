@@ -5,8 +5,7 @@ namespace Abschlussarbeit2 {
         x: number;
         y: number;
 
-
-        
+  
          drawTrunk(): void {
             crc2.beginPath();
             crc2.fillStyle = "rgb(139,90,0)";
@@ -18,9 +17,8 @@ namespace Abschlussarbeit2 {
             crc2.fill();
         }
         
-
-
-                draw(): void {
+           // Baum zeichnen      
+            draw(): void {
             crc2.beginPath();
             crc2.fillStyle = "rgb(0,115,0)";
             crc2.moveTo( this.x, this.y );
@@ -35,8 +33,7 @@ namespace Abschlussarbeit2 {
             crc2.stroke();
             crc2.fill();       
                     
-                    
-                    
+           
             this.drawTrunk();
 
         }
