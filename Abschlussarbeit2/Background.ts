@@ -17,9 +17,10 @@ namespace Abschlussarbeit2 {
             //crc2.fillRect( 0, crc2.canvas.height - _forestHeight, crc2.canvas.width, crc2.canvas.height );
             crc2.moveTo(0, 600);
             crc2.bezierCurveTo(150, 550, 300, 550, 450, 600);
-            crc2.bezierCurveTo(550, 500, 750, 450, 1000, 600);
-            crc2.lineTo(1000, 800);
-            crc2.lineTo(0, 800);
+            //crc2.bezierCurveTo(550, 500, 750, 450, 1000, 600);
+            crc2.bezierCurveTo(550, 500, 750, 450, 900, 100);
+            crc2.lineTo(900, 700);
+            crc2.lineTo(0, 700);
             crc2.closePath();
             crc2.fill();
 
