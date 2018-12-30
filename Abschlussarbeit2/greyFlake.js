@@ -3,7 +3,7 @@ var Abschlussarbeit2;
     class greyFlake extends Abschlussarbeit2.MovingObject {
         constructor() {
             super();
-            this.points = 3;
+            this.points = -3;
             this.color = "rgb(148,148,148)"; // Dunkelgrau
             this.setRandomPosition();
         }

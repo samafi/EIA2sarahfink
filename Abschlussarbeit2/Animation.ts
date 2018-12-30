@@ -4,6 +4,8 @@ namespace Abschlussarbeit2 {
     export let crc2: CanvasRenderingContext2D;
     let imgData: ImageData;
 
+        alert("Benutze die Pfeiltasten um den bösen Schneeflocken auszuweichen! Hast du zu viele Minuspunkte, verlierst du..")
+
     //MovingObject
 
     let movingObjects: MovingObject[] = [];
@@ -12,13 +14,13 @@ namespace Abschlussarbeit2 {
     //Weihnachtsbäume
 
     let trees: Tree[] = [];
-    let n: number = 7;
+    let n: number = 5;
 
     //Highscore
 
     let highscore: number = 0;
 
-    //Korb 
+    //Schneemann 
 
     let snowman: Snowman = new Snowman();
     snowman.x = 450;
@@ -40,11 +42,11 @@ namespace Abschlussarbeit2 {
 
         //Schneemann auf dem Smartphone steuern 
 
-        document.addEventListener( 'keydown', moveBasket );
+        document.addEventListener( 'keydown', moveSnowman );
 
         //Schneemann auf Handy/Tablet steuern 
 
-        document.addEventListener( 'touchmove', moveBasketTouch );
+        document.addEventListener( 'touchmove', moveSnowmanTouch );
 
         //Weihnachtsbäume
 
@@ -58,7 +60,7 @@ namespace Abschlussarbeit2 {
 
         animate();
         checkBubblePosition();
-        createBubbles();
+        createFlakes();
     }
 
     //Funktion für die Animation
@@ -88,22 +90,22 @@ namespace Abschlussarbeit2 {
 
     //Funktion für ständige Schneeflocken
 
-    function createBubbles(): void {
-        window.setTimeout( createBubbles, 500 );
+    function createFlakes(): void {
+        window.setTimeout( createFlakes, 500 );
 
         let p: number = Math.floor( Math.random() * 3 );
         switch ( p ) {
             case 0:
-                let bubblesRed: greyFlake = new greyFlake();
-                movingObjects.push( bubblesRed );
+                let GreyFlake: greyFlake = new greyFlake();
+                movingObjects.push(GreyFlake);
                 break;
             case 1:
-                let bubblesOrange: whiteFlake = new whiteFlake();
-                movingObjects.push( bubblesOrange );
+                let WhiteFlake: whiteFlake = new whiteFlake();
+                movingObjects.push(WhiteFlake);
                 break;
             case 2:
-                let bubblesPink: blueFlake = new blueFlake();
-                movingObjects.push( bubblesPink );
+                let BlueFlake: blueFlake = new blueFlake();
+                movingObjects.push(BlueFlake);
                 break;
         }
 
@@ -111,7 +113,7 @@ namespace Abschlussarbeit2 {
 
     //Funktion für die Steuerung
 
-    function moveBasket( _event: KeyboardEvent ): void {
+    function moveSnowman( _event: KeyboardEvent ): void {
         if ( _event.key == "ArrowRight" ) {
             snowman.moveRight();
         }
@@ -122,7 +124,7 @@ namespace Abschlussarbeit2 {
 
     //Funktion für Smartphone/Tabletsteuerung 
 
-    function moveBasketTouch( _event: TouchEvent ): void {
+    function moveSnowmanTouch( _event: TouchEvent ): void {
         if ( _event.changedTouches[0].clientX < crc2.canvas.clientWidth / 2 ) {
             snowman.moveLeft();
         } else {
@@ -159,8 +161,8 @@ namespace Abschlussarbeit2 {
 
     function updateHighscore( points: number ): void {
         highscore += points;
-        if ( highscore >= 200 ) {
-            alert( "You did a great job!" );
+        if ( highscore <= -120 ) {
+            alert( "Oh nein, du wurdest zu oft von den Schneeflocken getroffen. Versuche es doch noch einmal." );
             highscore = 0;
         }
     }
@@ -168,8 +170,9 @@ namespace Abschlussarbeit2 {
     //Funktion die den Punktestand anzeigt
 
     function showHighscore(): void {
-        crc2.font = "28px Sans-Serif";
-        crc2.fillStyle = "#2E2E2E";
-        crc2.fillText( "Score: " + highscore, 20, 50 );
+        crc2.font = "30px Lato";
+        crc2.fillStyle = "rgb(153, 40, 40)";
+        crc2.fillText( "Score: " + highscore, 740, 50 );
+      
     }
 }

@@ -13,7 +13,6 @@ var Abschlussarbeit2;
             Abschlussarbeit2.crc2.beginPath();
             Abschlussarbeit2.crc2.moveTo(this.x, this.y);
             Abschlussarbeit2.crc2.arc(this.x, this.y, 60, 0, 2 * Math.PI);
-            //crc2.bezierCurveTo( this.x, this.y + this.snowmanHeight, this.x + this.snowmanWidth, this.y + this.snowmanHeight, this.x + this.snowmanWidth, this.y );
             Abschlussarbeit2.crc2.closePath();
             Abschlussarbeit2.crc2.fill();
             //crc2.stroke();
@@ -89,18 +88,16 @@ var Abschlussarbeit2;
             Abschlussarbeit2.crc2.closePath();
             // crc2.fill();
             Abschlussarbeit2.crc2.stroke();
-            // Korbchengröße C
-            Abschlussarbeit2.crc2.fillStyle;
         }
         //Schneemann nach links
         moveLeft() {
-            if (this.x > 0) {
+            if (this.x > 50) {
                 this.x -= 30;
             }
         }
         //Schneemann nach rechts
         moveRight() {
-            if (this.x + this.snowmanWidth < Abschlussarbeit2.crc2.canvas.width) {
+            if (this.x + this.snowmanWidth < Abschlussarbeit2.crc2.canvas.width + 80) {
                 this.x += 30;
             }
         }

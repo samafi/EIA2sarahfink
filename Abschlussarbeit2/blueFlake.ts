@@ -4,8 +4,8 @@ namespace Abschlussarbeit2 {
 
         constructor() {
             super();
-            this.points = 6;
-            this.color = "rgb(198,106,205)";        // Hellblaue Schneeflocke
+            this.points = -6;
+            this.color = "rgb(218,165,32)";        // Hellblaue Schneeflocke
             this.setRandomPosition();
             
         }

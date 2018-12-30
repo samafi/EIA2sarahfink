@@ -4,8 +4,8 @@ namespace Abschlussarbeit2 {
 
         constructor() {
             super();
-            this.points = 3;
-            this.color = "rgb(148,148,148)"; // Dunkelgrau
+            this.points = -3;
+            this.color = "rgb(148,148,148)";        // Dunkelgrau
             this.setRandomPosition();
         }
     }

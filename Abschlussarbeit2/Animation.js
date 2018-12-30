@@ -2,15 +2,16 @@ var Abschlussarbeit2;
 (function (Abschlussarbeit2) {
     window.addEventListener("load", init);
     let imgData;
+    alert("Benutze die Pfeiltasten um den bösen Schneeflocken auszuweichen! Hast du zu viele Minuspunkte, verlierst du..");
     //MovingObject
     let movingObjects = [];
     let m = 3;
     //Weihnachtsbäume
     let trees = [];
-    let n = 7;
+    let n = 5;
     //Highscore
     let highscore = 0;
-    //Korb 
+    //Schneemann 
     let snowman = new Abschlussarbeit2.Snowman();
     snowman.x = 450;
     snowman.y = 630;
@@ -25,9 +26,9 @@ var Abschlussarbeit2;
         imgData = Abschlussarbeit2.crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
         //Schneemann auf dem Smartphone steuern 
-        document.addEventListener('keydown', moveBasket);
+        document.addEventListener('keydown', moveSnowman);
         //Schneemann auf Handy/Tablet steuern 
-        document.addEventListener('touchmove', moveBasketTouch);
+        document.addEventListener('touchmove', moveSnowmanTouch);
         //Weihnachtsbäume
         for (let i = 0; i < n; i++) {
             let tree = new Abschlussarbeit2.Tree();
@@ -37,7 +38,7 @@ var Abschlussarbeit2;
         }
         animate();
         checkBubblePosition();
-        createBubbles();
+        createFlakes();
     }
     //Funktion für die Animation
     function animate() {
@@ -59,26 +60,26 @@ var Abschlussarbeit2;
         }
     }
     //Funktion für ständige Schneeflocken
-    function createBubbles() {
-        window.setTimeout(createBubbles, 500);
+    function createFlakes() {
+        window.setTimeout(createFlakes, 500);
         let p = Math.floor(Math.random() * 3);
         switch (p) {
             case 0:
-                let bubblesRed = new Abschlussarbeit2.greyFlake();
-                movingObjects.push(bubblesRed);
+                let GreyFlake = new Abschlussarbeit2.greyFlake();
+                movingObjects.push(GreyFlake);
                 break;
             case 1:
-                let bubblesOrange = new Abschlussarbeit2.whiteFlake();
-                movingObjects.push(bubblesOrange);
+                let WhiteFlake = new Abschlussarbeit2.whiteFlake();
+                movingObjects.push(WhiteFlake);
                 break;
             case 2:
-                let bubblesPink = new Abschlussarbeit2.blueFlake();
-                movingObjects.push(bubblesPink);
+                let BlueFlake = new Abschlussarbeit2.blueFlake();
+                movingObjects.push(BlueFlake);
                 break;
         }
     }
     //Funktion für die Steuerung
-    function moveBasket(_event) {
+    function moveSnowman(_event) {
         if (_event.key == "ArrowRight") {
             snowman.moveRight();
         }
@@ -87,7 +88,7 @@ var Abschlussarbeit2;
         }
     }
     //Funktion für Smartphone/Tabletsteuerung 
-    function moveBasketTouch(_event) {
+    function moveSnowmanTouch(_event) {
         if (_event.changedTouches[0].clientX < Abschlussarbeit2.crc2.canvas.clientWidth / 2) {
             snowman.moveLeft();
         }
@@ -114,16 +115,16 @@ var Abschlussarbeit2;
     //Funktion für die Punktezahl
     function updateHighscore(points) {
         highscore += points;
-        if (highscore >= 200) {
-            alert("You did a great job!");
+        if (highscore <= -120) {
+            alert("Oh nein, du wurdest zu oft von den Schneeflocken getroffen. Versuche es doch noch einmal.");
             highscore = 0;
         }
     }
     //Funktion die den Punktestand anzeigt
     function showHighscore() {
-        Abschlussarbeit2.crc2.font = "28px Sans-Serif";
-        Abschlussarbeit2.crc2.fillStyle = "#2E2E2E";
-        Abschlussarbeit2.crc2.fillText("Score: " + highscore, 20, 50);
+        Abschlussarbeit2.crc2.font = "30px Lato";
+        Abschlussarbeit2.crc2.fillStyle = "rgb(153, 40, 40)";
+        Abschlussarbeit2.crc2.fillText("Score: " + highscore, 740, 50);
     }
 })(Abschlussarbeit2 || (Abschlussarbeit2 = {}));
 //# sourceMappingURL=Animation.js.map

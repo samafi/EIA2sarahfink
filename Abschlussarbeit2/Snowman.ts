@@ -19,7 +19,6 @@ namespace Abschlussarbeit2 {
             crc2.beginPath();
             crc2.moveTo(this.x, this.y);
             crc2.arc(this.x, this.y, 60, 0, 2*Math.PI);
-            //crc2.bezierCurveTo( this.x, this.y + this.snowmanHeight, this.x + this.snowmanWidth, this.y + this.snowmanHeight, this.x + this.snowmanWidth, this.y );
             crc2.closePath();
             crc2.fill();
             //crc2.stroke();
@@ -107,37 +106,25 @@ namespace Abschlussarbeit2 {
            // crc2.fill();
             crc2.stroke();
             
-            // Korbchengröße C
-            crc2.fillStyle
         }
-
-        
-        
-        
-        
-        
-        
-        
 
         //Schneemann nach links
 
         moveLeft(): void {
-            if ( this.x > 0 ) {
+            if ( this.x > 50 ) {
                 this.x -= 30;
             }
         }
-        
-        
+          
 
         //Schneemann nach rechts
 
         moveRight(): void {
-            if ( this.x + this.snowmanWidth < crc2.canvas.width ) {
+            if ( this.x + this.snowmanWidth < crc2.canvas.width+80 ) {
                 this.x += 30;
             }
         }
-        
-        
+                
         
         //Überprüfung ob Schneeflocke und Schneemann auf gleicher Höhe
 
