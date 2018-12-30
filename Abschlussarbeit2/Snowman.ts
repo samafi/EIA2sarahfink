@@ -110,8 +110,14 @@ namespace Abschlussarbeit2 {
 
         //Schneemann nach links
 
-        moveLeft(): void {
+       /* moveLeft(): void {
             if ( this.x > 50 ) {
+                this.x -= 30;
+            }
+        } */
+        
+         moveLeft(): void {
+            if ( this.x > 0 ) {
                 this.x -= 30;
             }
         }
@@ -119,8 +125,14 @@ namespace Abschlussarbeit2 {
 
         //Schneemann nach rechts
 
-        moveRight(): void {
+       /* moveRight(): void {
             if ( this.x + this.snowmanWidth < crc2.canvas.width+80 ) {
+                this.x += 30;
+            }
+        } */
+        
+          moveRight(): void {
+            if ( this.x + this.snowmanWidth < crc2.canvas.width ) {
                 this.x += 30;
             }
         }

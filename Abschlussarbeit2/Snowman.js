@@ -90,14 +90,24 @@ var Abschlussarbeit2;
             Abschlussarbeit2.crc2.stroke();
         }
         //Schneemann nach links
+        /* moveLeft(): void {
+             if ( this.x > 50 ) {
+                 this.x -= 30;
+             }
+         } */
         moveLeft() {
-            if (this.x > 50) {
+            if (this.x > 0) {
                 this.x -= 30;
             }
         }
         //Schneemann nach rechts
+        /* moveRight(): void {
+             if ( this.x + this.snowmanWidth < crc2.canvas.width+80 ) {
+                 this.x += 30;
+             }
+         } */
         moveRight() {
-            if (this.x + this.snowmanWidth < Abschlussarbeit2.crc2.canvas.width + 80) {
+            if (this.x + this.snowmanWidth < Abschlussarbeit2.crc2.canvas.width) {
                 this.x += 30;
             }
         }
