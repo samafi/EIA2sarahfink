@@ -1,5 +1,5 @@
-var Abschlussarbeit;
-(function (Abschlussarbeit) {
+var Abschlussarbeit2;
+(function (Abschlussarbeit2) {
     window.addEventListener("load", init);
     let imgData;
     //MovingObject
@@ -11,18 +11,18 @@ var Abschlussarbeit;
     //Highscore
     let highscore = 0;
     //Korb 
-    let snowman = new Abschlussarbeit.Snowman();
+    let snowman = new Abschlussarbeit2.Snowman();
     snowman.x = 450;
     snowman.y = 630;
     //Funktion init
     function init(_event) {
         let canvas = document.getElementsByTagName("canvas")[0];
-        Abschlussarbeit.crc2 = canvas.getContext("2d");
-        console.log(Abschlussarbeit.crc2);
+        Abschlussarbeit2.crc2 = canvas.getContext("2d");
+        console.log(Abschlussarbeit2.crc2);
         //Hintergrund
-        let hg = new Abschlussarbeit.Background;
+        let hg = new Abschlussarbeit2.Background;
         hg.paint();
-        imgData = Abschlussarbeit.crc2.getImageData(0, 0, canvas.width, canvas.height);
+        imgData = Abschlussarbeit2.crc2.getImageData(0, 0, canvas.width, canvas.height);
         console.log(imgData);
         //Schneemann auf dem Smartphone steuern 
         document.addEventListener('keydown', moveBasket);
@@ -30,7 +30,7 @@ var Abschlussarbeit;
         document.addEventListener('touchmove', moveBasketTouch);
         //Weihnachtsbäume
         for (let i = 0; i < n; i++) {
-            let tree = new Abschlussarbeit.Tree();
+            let tree = new Abschlussarbeit2.Tree();
             tree.x = Math.random() * 900;
             tree.y = (550);
             trees.push(tree);
@@ -42,7 +42,7 @@ var Abschlussarbeit;
     //Funktion für die Animation
     function animate() {
         window.setTimeout(animate, 10);
-        Abschlussarbeit.crc2.putImageData(imgData, 0, 0);
+        Abschlussarbeit2.crc2.putImageData(imgData, 0, 0);
         moveObjects();
         drawObjects();
     }
@@ -64,15 +64,15 @@ var Abschlussarbeit;
         let p = Math.floor(Math.random() * 3);
         switch (p) {
             case 0:
-                let bubblesRed = new Abschlussarbeit.BubbleRed();
+                let bubblesRed = new Abschlussarbeit2.greyFlake();
                 movingObjects.push(bubblesRed);
                 break;
             case 1:
-                let bubblesOrange = new Abschlussarbeit.BubbleOrange();
+                let bubblesOrange = new Abschlussarbeit2.whiteFlake();
                 movingObjects.push(bubblesOrange);
                 break;
             case 2:
-                let bubblesPink = new Abschlussarbeit.BubblePink();
+                let bubblesPink = new Abschlussarbeit2.blueFlake();
                 movingObjects.push(bubblesPink);
                 break;
         }
@@ -88,13 +88,13 @@ var Abschlussarbeit;
     }
     //Funktion für Smartphone/Tabletsteuerung 
     function moveBasketTouch(_event) {
-        if (_event.changedTouches[0].clientX < Abschlussarbeit.crc2.canvas.clientWidth / 2) {
+        if (_event.changedTouches[0].clientX < Abschlussarbeit2.crc2.canvas.clientWidth / 2) {
             snowman.moveLeft();
         }
         else {
             snowman.moveRight();
         }
-        console.log(_event, Abschlussarbeit.crc2.canvas.clientWidth / 2);
+        console.log(_event, Abschlussarbeit2.crc2.canvas.clientWidth / 2);
     }
     //Funktion für die Schneeflocken, die runter fallen
     function moveObjects() {
@@ -121,9 +121,9 @@ var Abschlussarbeit;
     }
     //Funktion die den Punktestand anzeigt
     function showHighscore() {
-        Abschlussarbeit.crc2.font = "28px Sans-Serif";
-        Abschlussarbeit.crc2.fillStyle = "#2E2E2E";
-        Abschlussarbeit.crc2.fillText("Score: " + highscore, 20, 50);
+        Abschlussarbeit2.crc2.font = "28px Sans-Serif";
+        Abschlussarbeit2.crc2.fillStyle = "#2E2E2E";
+        Abschlussarbeit2.crc2.fillText("Score: " + highscore, 20, 50);
     }
-})(Abschlussarbeit || (Abschlussarbeit = {}));
-//# sourceMappingURL=Hauptprogramm.js.map
+})(Abschlussarbeit2 || (Abschlussarbeit2 = {}));
+//# sourceMappingURL=Animation.js.map

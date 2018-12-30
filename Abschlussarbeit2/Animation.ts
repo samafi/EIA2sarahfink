@@ -1,4 +1,4 @@
-namespace Abschlussarbeit {
+namespace Abschlussarbeit2 {
 
     window.addEventListener( "load", init );
     export let crc2: CanvasRenderingContext2D;
@@ -94,15 +94,15 @@ namespace Abschlussarbeit {
         let p: number = Math.floor( Math.random() * 3 );
         switch ( p ) {
             case 0:
-                let bubblesRed: BubbleRed = new BubbleRed();
+                let bubblesRed: greyFlake = new greyFlake();
                 movingObjects.push( bubblesRed );
                 break;
             case 1:
-                let bubblesOrange: BubbleOrange = new BubbleOrange();
+                let bubblesOrange: whiteFlake = new whiteFlake();
                 movingObjects.push( bubblesOrange );
                 break;
             case 2:
-                let bubblesPink: BubblePink = new BubblePink();
+                let bubblesPink: blueFlake = new blueFlake();
                 movingObjects.push( bubblesPink );
                 break;
         }

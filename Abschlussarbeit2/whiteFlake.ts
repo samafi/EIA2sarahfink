@@ -1,6 +1,6 @@
-namespace Abschlussarbeit {
+namespace Abschlussarbeit2 {
 
-    export class BubbleOrange extends MovingObject {
+    export class whiteFlake extends MovingObject {
 
         constructor() {
             super();

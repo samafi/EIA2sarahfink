@@ -1,6 +1,6 @@
-var Abschlussarbeit;
-(function (Abschlussarbeit) {
-    class BubbleOrange extends Abschlussarbeit.MovingObject {
+var Abschlussarbeit2;
+(function (Abschlussarbeit2) {
+    class whiteFlake extends Abschlussarbeit2.MovingObject {
         constructor() {
             super();
             this.points = 10;
@@ -8,6 +8,6 @@ var Abschlussarbeit;
             this.setRandomPosition();
         }
     }
-    Abschlussarbeit.BubbleOrange = BubbleOrange;
-})(Abschlussarbeit || (Abschlussarbeit = {}));
+    Abschlussarbeit2.whiteFlake = whiteFlake;
+})(Abschlussarbeit2 || (Abschlussarbeit2 = {}));
 //# sourceMappingURL=whiteFlake.js.map

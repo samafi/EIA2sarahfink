@@ -1,4 +1,4 @@
-namespace Abschlussarbeit {
+namespace Abschlussarbeit2 {
 
     export class Tree {
 
