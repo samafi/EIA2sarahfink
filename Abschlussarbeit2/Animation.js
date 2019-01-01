@@ -47,7 +47,7 @@ var Abschlussarbeit2;
         moveObjects();
         drawObjects();
     }
-    //Überprüfung ob Schneemann und Schneeflocke auf gleicher Höhe
+    //Überprüfung ob Schneemann und Schneeflocke auf gleicher Höhe sind
     function checkBubblePosition() {
         window.setTimeout(checkBubblePosition, 10);
         for (let i = 0; i < movingObjects.length; i++) {

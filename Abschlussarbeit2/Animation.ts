@@ -73,7 +73,7 @@ namespace Abschlussarbeit2 {
         drawObjects();
     }
 
-    //Überprüfung ob Schneemann und Schneeflocke auf gleicher Höhe
+    //Überprüfung ob Schneemann und Schneeflocke auf gleicher Höhe sind
 
     function checkBubblePosition(): void {
         window.setTimeout( checkBubblePosition, 10 );
