@@ -40,11 +40,11 @@ namespace Abschlussarbeit2 {
         imgData = crc2.getImageData( 0, 0, canvas.width, canvas.height );
         console.log( imgData );
 
-        //Schneemann auf dem Smartphone steuern 
+        //um Schneemann auf dem Smartphone zu steuern 
 
         document.addEventListener( 'keydown', moveSnowman );
 
-        //Schneemann auf Handy/Tablet steuern 
+        //um Schneemann auf Handy/Tablet zu steuern 
 
         document.addEventListener( 'touchmove', moveSnowmanTouch );
 
