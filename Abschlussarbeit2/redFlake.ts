@@ -4,7 +4,7 @@ namespace Abschlussarbeit2 {
 
         constructor() {
             super();
-            this.points = -6                       // Punktezahl 
+            this.points = -20                       // Punktezahl 
             this.color = "rgb(255,0,0)";        // rote Schneeflocke
             this.setRandomPosition();
             

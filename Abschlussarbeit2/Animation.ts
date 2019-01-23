@@ -4,7 +4,7 @@ namespace Abschlussarbeit2 {
     export let crc2: CanvasRenderingContext2D;
     let imgData: ImageData;
 
-     // alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren und kalt zu bleiben! Aber ACHTUNG vor den roten Flocken..")
+      alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren und kalt zu bleiben! Aber ACHTUNG vor den roten erwärmen dich und geben Minuspunkte..")
 
     //MovingObject
 
@@ -161,8 +161,8 @@ namespace Abschlussarbeit2 {
 
     function updateHighscore( points: number ): void {
         highscore += points;
-        if ( highscore <= -120 ) {
-            alert( "Oh nein, du wurdest zu oft von den Schneeflocken getroffen. Versuche es doch noch einmal." );
+        if ( highscore <= -50 ) {
+            alert( "Oh nein, du wurdest zu oft von den roten Schneeflocken getroffen. Versuche es doch noch einmal." );
             highscore = 0;
         }
     }
