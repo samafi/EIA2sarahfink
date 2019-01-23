@@ -37,11 +37,18 @@ namespace Abschlussarbeit2 {
             crc2.closePath();
             crc2.stroke();
             
+            
             crc2.fillStyle = this.color;
             crc2.beginPath();
             crc2.moveTo(this.x, this.y);
-            crc2.arc(this.x+10, this.y, 5.5, 0 , 2*Math.PI);
+            crc2.arc(this.x+10, this.y, 5, 0 , 2*Math.PI);
             crc2.closePath();
+            
+            
+            
+            
+ 
+         
             
             crc2.fill();
 

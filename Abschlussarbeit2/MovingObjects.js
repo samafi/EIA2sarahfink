@@ -26,7 +26,7 @@ var Abschlussarbeit2;
             Abschlussarbeit2.crc2.fillStyle = this.color;
             Abschlussarbeit2.crc2.beginPath();
             Abschlussarbeit2.crc2.moveTo(this.x, this.y);
-            Abschlussarbeit2.crc2.arc(this.x + 10, this.y, 5.5, 0, 2 * Math.PI);
+            Abschlussarbeit2.crc2.arc(this.x + 10, this.y, 5, 0, 2 * Math.PI);
             Abschlussarbeit2.crc2.closePath();
             Abschlussarbeit2.crc2.fill();
         }
