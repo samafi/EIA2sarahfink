@@ -14,7 +14,7 @@ namespace Abschlussarbeit2 {
     //Weihnachtsbäume
 
     let trees: Tree[] = [];
-    let n: number = 5;
+    let n: number = 5;                      //5 Bäume insgesamt 
 
     //Highscore
 

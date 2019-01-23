@@ -8,7 +8,7 @@ var Abschlussarbeit2;
     let m = 3;
     //Weihnachtsbäume
     let trees = [];
-    let n = 5;
+    let n = 5; //5 Bäume insgesamt 
     //Highscore
     let highscore = 0;
     //Schneemann 

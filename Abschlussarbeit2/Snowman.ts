@@ -5,8 +5,8 @@ namespace Abschlussarbeit2 {
         x: number;
         y: number;
 
-        snowmanWidth: number = 154;
-        snowmanHeight: number = 90;
+        snowmanWidth: number = 90;
+        snowmanHeight: number = 150;
 
         
         // untere Schneekugel 
@@ -94,14 +94,14 @@ namespace Abschlussarbeit2 {
             crc2.strokeStyle = "rgb(0,0,0)";
             crc2.beginPath();
             crc2.moveTo(this.x+48, this.y-80);
-            crc2.lineTo(this.x+100, this.y-100);
+            crc2.lineTo(this.x+70, this.y-70);
             crc2.closePath();
             //crc2.fill();
             crc2.stroke();
             
             crc2.beginPath();
             crc2.moveTo(this.x-48, this.y-80);
-            crc2.lineTo(this.x-100, this.y-100);
+            crc2.lineTo(this.x-70, this.y-70);
             crc2.closePath();
            // crc2.fill();
             crc2.stroke();
@@ -109,30 +109,18 @@ namespace Abschlussarbeit2 {
         }
 
         //Schneemann nach links
-
-       /* moveLeft(): void {
-            if ( this.x > 50 ) {
-                this.x -= 30;
-            }
-        } */
-        
+     
          moveLeft(): void {
-            if ( this.x > 0 ) {
+            if ( this.x > 50 ) {                                                            // mit > 50 (statt 0) kann er weiter nach links
                 this.x -= 30;
             }
         }
           
 
         //Schneemann nach rechts
-
-       /* moveRight(): void {
-            if ( this.x + this.snowmanWidth < crc2.canvas.width+80 ) {
-                this.x += 30;
-            }
-        } */
         
           moveRight(): void {
-            if ( this.x + this.snowmanWidth < crc2.canvas.width ) {
+            if ( this.x + this.snowmanWidth < crc2.canvas.width+80 ) {                      // mit +80 kann er weiter nach rechts
                 this.x += 30;
             }
         }

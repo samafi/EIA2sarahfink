@@ -17,16 +17,16 @@ var Abschlussarbeit2;
             Abschlussarbeit2.crc2.beginPath();
             //horizontal
             Abschlussarbeit2.crc2.moveTo(this.x, this.y);
-            Abschlussarbeit2.crc2.lineTo(this.x + 10, this.y);
+            Abschlussarbeit2.crc2.lineTo(this.x + 20, this.y);
             //vertikal
-            Abschlussarbeit2.crc2.moveTo(this.x + 5, this.y - 5);
-            Abschlussarbeit2.crc2.lineTo(this.x + 5, this.y + 5);
+            Abschlussarbeit2.crc2.moveTo(this.x + 10, this.y - 10);
+            Abschlussarbeit2.crc2.lineTo(this.x + 10, this.y + 10);
             Abschlussarbeit2.crc2.closePath();
             Abschlussarbeit2.crc2.stroke();
             Abschlussarbeit2.crc2.fillStyle = this.color;
             Abschlussarbeit2.crc2.beginPath();
             Abschlussarbeit2.crc2.moveTo(this.x, this.y);
-            Abschlussarbeit2.crc2.arc(this.x + 5, this.y, 3, 0, 2 * Math.PI);
+            Abschlussarbeit2.crc2.arc(this.x + 10, this.y, 5.5, 0, 2 * Math.PI);
             Abschlussarbeit2.crc2.closePath();
             Abschlussarbeit2.crc2.fill();
         }

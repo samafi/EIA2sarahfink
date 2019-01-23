@@ -2,8 +2,8 @@ var Abschlussarbeit2;
 (function (Abschlussarbeit2) {
     class Snowman {
         constructor() {
-            this.snowmanWidth = 154;
-            this.snowmanHeight = 90;
+            this.snowmanWidth = 90;
+            this.snowmanHeight = 150;
         }
         // untere Schneekugel 
         // Schneemann zeichnen
@@ -78,36 +78,26 @@ var Abschlussarbeit2;
             Abschlussarbeit2.crc2.strokeStyle = "rgb(0,0,0)";
             Abschlussarbeit2.crc2.beginPath();
             Abschlussarbeit2.crc2.moveTo(this.x + 48, this.y - 80);
-            Abschlussarbeit2.crc2.lineTo(this.x + 100, this.y - 100);
+            Abschlussarbeit2.crc2.lineTo(this.x + 70, this.y - 70);
             Abschlussarbeit2.crc2.closePath();
             //crc2.fill();
             Abschlussarbeit2.crc2.stroke();
             Abschlussarbeit2.crc2.beginPath();
             Abschlussarbeit2.crc2.moveTo(this.x - 48, this.y - 80);
-            Abschlussarbeit2.crc2.lineTo(this.x - 100, this.y - 100);
+            Abschlussarbeit2.crc2.lineTo(this.x - 70, this.y - 70);
             Abschlussarbeit2.crc2.closePath();
             // crc2.fill();
             Abschlussarbeit2.crc2.stroke();
         }
         //Schneemann nach links
-        /* moveLeft(): void {
-             if ( this.x > 50 ) {
-                 this.x -= 30;
-             }
-         } */
         moveLeft() {
-            if (this.x > 0) {
+            if (this.x > 50) {
                 this.x -= 30;
             }
         }
         //Schneemann nach rechts
-        /* moveRight(): void {
-             if ( this.x + this.snowmanWidth < crc2.canvas.width+80 ) {
-                 this.x += 30;
-             }
-         } */
         moveRight() {
-            if (this.x + this.snowmanWidth < Abschlussarbeit2.crc2.canvas.width) {
+            if (this.x + this.snowmanWidth < Abschlussarbeit2.crc2.canvas.width + 80) {
                 this.x += 30;
             }
         }
