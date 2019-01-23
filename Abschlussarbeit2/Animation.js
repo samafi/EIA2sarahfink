@@ -2,7 +2,7 @@ var Abschlussarbeit2;
 (function (Abschlussarbeit2) {
     window.addEventListener("load", init);
     let imgData;
-    //  alert("Benutze die Pfeiltasten um den bösen Schneeflocken auszuweichen! Hast du zu viele Minuspunkte, verlierst du..")
+    alert("Benutze die Pfeiltasten um den bösen Schneeflocken auszuweichen! Hast du zu viele Minuspunkte, verlierst du..");
     //MovingObject
     let movingObjects = [];
     let m = 3;

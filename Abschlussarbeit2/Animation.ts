@@ -4,7 +4,7 @@ namespace Abschlussarbeit2 {
     export let crc2: CanvasRenderingContext2D;
     let imgData: ImageData;
 
-   //  alert("Benutze die Pfeiltasten um den bösen Schneeflocken auszuweichen! Hast du zu viele Minuspunkte, verlierst du..")
+     alert("Benutze die Pfeiltasten um den bösen Schneeflocken auszuweichen! Hast du zu viele Minuspunkte, verlierst du..")
 
     //MovingObject
 
