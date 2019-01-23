@@ -4,7 +4,7 @@ namespace Abschlussarbeit2 {
     export let crc2: CanvasRenderingContext2D;
     let imgData: ImageData;
 
-      alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren und kalt zu bleiben! Aber ACHTUNG vor den roten erwärmen dich und geben Minuspunkte..")
+      alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken! Aber ACHTUNG die roten FLocken erwärmen Dich und geben Minuspunkte..")
 
     //MovingObject
 
