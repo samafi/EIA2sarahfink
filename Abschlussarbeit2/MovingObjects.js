@@ -18,6 +18,12 @@ var Abschlussarbeit2;
             //horizontal
             Abschlussarbeit2.crc2.moveTo(this.x, this.y);
             Abschlussarbeit2.crc2.lineTo(this.x + 20, this.y);
+            //grün
+            Abschlussarbeit2.crc2.moveTo(this.x + 4, this.y - 6);
+            Abschlussarbeit2.crc2.lineTo(this.x + 16, this.y + 6);
+            //rosa
+            Abschlussarbeit2.crc2.moveTo(this.x + 4, this.y + 6);
+            Abschlussarbeit2.crc2.lineTo(this.x + 16, this.y - 6);
             //vertikal
             Abschlussarbeit2.crc2.moveTo(this.x + 10, this.y - 10);
             Abschlussarbeit2.crc2.lineTo(this.x + 10, this.y + 10);
@@ -26,7 +32,7 @@ var Abschlussarbeit2;
             Abschlussarbeit2.crc2.fillStyle = this.color;
             Abschlussarbeit2.crc2.beginPath();
             Abschlussarbeit2.crc2.moveTo(this.x, this.y);
-            Abschlussarbeit2.crc2.arc(this.x + 10, this.y, 5, 0, 2 * Math.PI);
+            Abschlussarbeit2.crc2.arc(this.x + 10, this.y, 2, 0, 2 * Math.PI);
             Abschlussarbeit2.crc2.closePath();
             Abschlussarbeit2.crc2.fill();
         }

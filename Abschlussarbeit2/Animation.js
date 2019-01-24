@@ -2,7 +2,7 @@ var Abschlussarbeit2;
 (function (Abschlussarbeit2) {
     window.addEventListener("load", init);
     let imgData;
-    alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken! Aber ACHTUNG die roten FLocken erwärmen Dich und geben Minuspunkte..");
+    alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren :) Aber ACHTUNG die roten FLocken erwärmen Dich und geben Minuspunkte..");
     //MovingObject
     let movingObjects = [];
     let m = 3;
@@ -115,7 +115,7 @@ var Abschlussarbeit2;
     //Funktion für die Punktezahl
     function updateHighscore(points) {
         highscore += points;
-        if (highscore <= -50) {
+        if (highscore <= -150) {
             alert("Oh nein, du wurdest zu oft von den roten Schneeflocken getroffen. Versuche es doch noch einmal.");
             highscore = 0;
         }
