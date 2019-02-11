@@ -161,9 +161,13 @@ namespace Abschlussarbeit02 {
 
     function updateHighscore( points: number ): void {
         highscore += points;
-        if ( highscore <= -150 ) {
+        if ( highscore <= -50 ) {
             alert( "Oh nein, du wurdest zu oft von den roten Schneeflocken getroffen. Versuche es doch noch einmal." );
             highscore = 0;
+     }
+        else if (highscore >= 20) {
+            alert("Glückwunsch! Du hast den Schneemann gerettet und ihn auf die richtige Temperatur gebracht damit er nicht schmilzt :)");
+            highscore = 0;        
         }
     }
 

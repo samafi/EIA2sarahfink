@@ -37,7 +37,7 @@ var Abschlussarbeit2;
             trees.push(tree);
         }
         animate();
-        checkBubblePosition();
+        checkFlakePosition();
         createFlakes();
     }
     //Funktion für die Animation
@@ -48,14 +48,14 @@ var Abschlussarbeit2;
         drawObjects();
     }
     //Überprüfung ob Schneemann und Schneeflocke auf gleicher Höhe sind
-    function checkBubblePosition() {
-        window.setTimeout(checkBubblePosition, 10);
+    function checkFlakePosition() {
+        window.setTimeout(checkFlakePosition, 10);
         for (let i = 0; i < movingObjects.length; i++) {
-            let bubble = movingObjects[i];
-            let inside = snowman.checkIfInside(bubble.x, bubble.y);
+            let flake = movingObjects[i];
+            let inside = snowman.checkIfInside(flake.x, flake.y);
             if (inside) {
                 movingObjects.splice(i, 1);
-                updateHighscore(bubble.points);
+                updateHighscore(flake.points);
             }
         }
     }
@@ -113,10 +113,23 @@ var Abschlussarbeit2;
         showHighscore();
     }
     //Funktion für die Punktezahl
+    /*
+     function updateHighscore( points: number ): void {
+         highscore += points;
+         if ( highscore <= -40 ) {
+             alert( "Oh nein, du wurdest zu oft von den roten Schneeflocken getroffen. Versuche es doch noch einmal." );
+             highscore = 0;
+         }
+     }
+     */
     function updateHighscore(points) {
         highscore += points;
-        if (highscore <= -150) {
+        if (points <= -40) {
             alert("Oh nein, du wurdest zu oft von den roten Schneeflocken getroffen. Versuche es doch noch einmal.");
+            highscore = 0;
+        }
+        else if (points >= 100) {
+            alert("Glückwunsch! Du hast den Schneemann gerettet und ihn auf die richtige Temperatur gebracht damit er nicht schmilzt :)");
             highscore = 0;
         }
     }

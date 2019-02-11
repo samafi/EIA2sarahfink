@@ -10,7 +10,7 @@ namespace Abschlussarbeit2 {
 
         //Funktion Hintergrund
         drawBackground( _forestHeight: number ): void {
-            crc2.fillStyle = "rgb(178, 231, 255)";                              // Blauer Hintergrund
+            crc2.fillStyle = "rgb(52,129,184)";                              // Blauer Hintergrund
             crc2.fillRect( 0, 0, crc2.canvas.width, crc2.canvas.height );
 
             crc2.fillStyle = "rgb(232, 235, 237)";                              // Schneeboden 

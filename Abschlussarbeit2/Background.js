@@ -6,7 +6,7 @@ var Abschlussarbeit2;
         }
         //Funktion Hintergrund
         drawBackground(_forestHeight) {
-            Abschlussarbeit2.crc2.fillStyle = "rgb(178, 231, 255)"; // Blauer Hintergrund
+            Abschlussarbeit2.crc2.fillStyle = "rgb(52,129,184)"; // Blauer Hintergrund
             Abschlussarbeit2.crc2.fillRect(0, 0, Abschlussarbeit2.crc2.canvas.width, Abschlussarbeit2.crc2.canvas.height);
             Abschlussarbeit2.crc2.fillStyle = "rgb(232, 235, 237)"; // Schneeboden 
             Abschlussarbeit2.crc2.moveTo(0, 600);

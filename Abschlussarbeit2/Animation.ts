@@ -6,26 +6,27 @@ namespace Abschlussarbeit2 {
 
       alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren :) Aber ACHTUNG die roten Flocken erwärmen Dich und geben Minuspunkte..")
 
+    
     //MovingObject
 
     let movingObjects: MovingObject[] = [];
     let m: number = 3;
-
+   
     //Weihnachtsbäume
 
     let trees: Tree[] = [];
-    let n: number = 5;                      //5 Bäume insgesamt 
-
+    let n: number = 5;                                                        //5 Bäume insgesamt 
+   
     //Highscore
 
     let highscore: number = 0;
-
+ 
     //Schneemann 
 
     let snowman: Snowman = new Snowman();
     snowman.x = 450;
     snowman.y = 630;
-
+    
     //Funktion init
 
     function init( _event: Event ): void {
@@ -33,9 +34,9 @@ namespace Abschlussarbeit2 {
         crc2 = canvas.getContext( "2d" );
         console.log( crc2 );
 
-        //Hintergrund
+    //Hintergrund
 
-        let hg: Background = new Background;
+       let hg: Background = new Background;
         hg.paint();
         imgData = crc2.getImageData( 0, 0, canvas.width, canvas.height );
         console.log( imgData );
@@ -59,7 +60,8 @@ namespace Abschlussarbeit2 {
         }
 
         animate();
-        checkBubblePosition();
+        checkFlakePosition
+();
         createFlakes();
     }
 
@@ -75,19 +77,20 @@ namespace Abschlussarbeit2 {
 
     //Überprüfung ob Schneemann und Schneeflocke auf gleicher Höhe sind
 
-    function checkBubblePosition(): void {
-        window.setTimeout( checkBubblePosition, 10 );
-        for ( let i: number = 0; i < movingObjects.length; i++ ) {
-            let bubble = movingObjects[i];
-            let inside = snowman.checkIfInside( bubble.x, bubble.y );
+    function checkFlakePosition(): void {
+        window.setTimeout(checkFlakePosition, 10);
+        for ( let i: number = 0; i < movingObjects.length; i++) {
+            let flake = movingObjects[i];
+            let inside = snowman.checkIfInside(flake.x, flake.y);
 
             if ( inside ) {
-                movingObjects.splice( i, 1 );
-                updateHighscore( bubble.points );
+                movingObjects.splice(i, 1);
+                updateHighscore(flake.points);
             }
         }
     }
 
+    
     //Funktion für ständige Schneeflocken
 
     function createFlakes(): void {
@@ -111,6 +114,7 @@ namespace Abschlussarbeit2 {
 
     }
 
+    
     //Funktion für die Steuerung
 
     function moveSnowman( _event: KeyboardEvent ): void {
@@ -122,6 +126,7 @@ namespace Abschlussarbeit2 {
         }
     }
 
+    
     //Funktion für Smartphone/Tabletsteuerung 
 
     function moveSnowmanTouch( _event: TouchEvent ): void {
@@ -133,6 +138,7 @@ namespace Abschlussarbeit2 {
         console.log( _event, crc2.canvas.clientWidth / 2 );
     }
 
+    
     //Funktion für die Schneeflocken, die runter fallen
 
     function moveObjects(): void {
@@ -142,6 +148,7 @@ namespace Abschlussarbeit2 {
 
         }
     }
+    
 
     //Funktion welche bewegte Elemente zeichnet
 
@@ -157,16 +164,34 @@ namespace Abschlussarbeit2 {
         showHighscore();
     }
 
+    
+    
     //Funktion für die Punktezahl
-
+   /*
     function updateHighscore( points: number ): void {
         highscore += points;
-        if ( highscore <= -150 ) {
+        if ( highscore <= -40 ) {
             alert( "Oh nein, du wurdest zu oft von den roten Schneeflocken getroffen. Versuche es doch noch einmal." );
             highscore = 0;
         }
     }
-
+    */
+    
+    
+   function updateHighscore(points: number): void {
+        highscore += points;
+        if (points <= -40) {
+            alert("Oh nein, du wurdest zu oft von den roten Schneeflocken getroffen. Versuche es doch noch einmal.");
+            highscore = 0;
+        }
+        else if (points >= 100) {
+            alert("Glückwunsch! Du hast den Schneemann gerettet und ihn auf die richtige Temperatur gebracht damit er nicht schmilzt :)");
+            highscore = 0; 
+        } } 
+    
+    
+    
+    
     //Funktion die den Punktestand anzeigt
 
     function showHighscore(): void {

@@ -4,7 +4,7 @@ var Abschlussarbeit02;
         constructor() {
             super();
             this.points = +5;
-            this.color = "rgb(235,235,235)"; // Dunkelgrau
+            this.color = "rgb(224,255,255)"; // Dunkelgrau
             this.setRandomPosition();
         }
     }
