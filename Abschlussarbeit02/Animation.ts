@@ -171,7 +171,7 @@ namespace Abschlussarbeit02 {
         }
     }
 
-    //Funktion die den Punktestand anzeigt
+    // Stelle Punktestand dar
 
     function showHighscore(): void {
         crc2.font = "30px Lato";

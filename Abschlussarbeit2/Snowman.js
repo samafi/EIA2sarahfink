@@ -2,7 +2,7 @@ var Abschlussarbeit2;
 (function (Abschlussarbeit2) {
     class Snowman {
         constructor() {
-            this.snowmanWidth = 90;
+            this.snowmanWidth = 80;
             this.snowmanHeight = 150;
         }
         // untere Schneekugel 
@@ -103,7 +103,7 @@ var Abschlussarbeit2;
         }
         //Überprüfung ob Schneeflocke und Schneemann auf gleicher Höhe
         checkIfInside(_x, _y) {
-            if (_x > this.x && _x < (this.x + this.snowmanWidth) && _y > this.y && _y < this.y + this.snowmanHeight) {
+            if (_x > (this.x - 55) && _x < (this.x + 50) && _y > (this.y - 150)) {
                 return true;
             }
             return false;

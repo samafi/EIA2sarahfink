@@ -5,7 +5,7 @@ namespace Abschlussarbeit2 {
         x: number;
         y: number;
 
-        snowmanWidth: number = 90;
+        snowmanWidth: number = 80;
         snowmanHeight: number = 150;
 
         
@@ -129,10 +129,21 @@ namespace Abschlussarbeit2 {
         //Überprüfung ob Schneeflocke und Schneemann auf gleicher Höhe
 
         checkIfInside( _x: number, _y: number ): boolean {
+            if ( _x > (this.x - 55) && _x < ( this.x + 50) && _y > (this.y - 150)  ) {
+                return true;
+            }
+            return false;
+        }
+        
+        /* Sicherung
+        
+        checkIfInside( _x: number, _y: number ): boolean {
             if ( _x > this.x && _x < ( this.x + this.snowmanWidth ) && _y > this.y && _y < this.y + this.snowmanHeight ) {
                 return true;
             }
             return false;
         }
+        
+        */
     }
 } // namespace schließen

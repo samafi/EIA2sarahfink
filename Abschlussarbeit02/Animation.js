@@ -124,7 +124,7 @@ var Abschlussarbeit02;
             highscore = 0;
         }
     }
-    //Funktion die den Punktestand anzeigt
+    // Stelle Punktestand dar
     function showHighscore() {
         Abschlussarbeit02.crc2.font = "30px Lato";
         Abschlussarbeit02.crc2.fillStyle = "rgb(153, 40, 40)";

@@ -127,12 +127,13 @@ namespace Abschlussarbeit02 {
                 
         
         //Überprüfung ob Schneeflocke und Schneemann auf gleicher Höhe
-
+       
         checkIfInside( _x: number, _y: number ): boolean {
-            if ( _x > this.x && _x < ( this.x + this.snowmanWidth ) && _y > this.y && _y < this.y + this.snowmanHeight ) {
+            if ( _x > (this.x - 55) && _x < ( this.x + 50) && _y > (this.y - 150) && _y < (this.y) ) {
                 return true;
             }
             return false;
         }
+ 
     }
 } // namespace schließen

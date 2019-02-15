@@ -2,7 +2,7 @@ namespace Abschlussarbeit02 {
 
     export class MovingObject {
 
-        x: number;
+        x: number;  
         y: number;
         radius: number = 6;
         points: number;

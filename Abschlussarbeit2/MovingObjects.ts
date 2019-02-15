@@ -1,6 +1,6 @@
 namespace Abschlussarbeit2 {
 
-    export class MovingObject {
+    export class MovingObject {                         //Schneeflocken
 
         x: number;
         y: number;
@@ -31,11 +31,11 @@ namespace Abschlussarbeit2 {
             crc2.moveTo (this.x,this.y);
             crc2.lineTo (this.x+20, this.y); 
             
-            //grün
+            //
             crc2.moveTo (this.x+4,this.y-6);
             crc2.lineTo (this.x+16, this.y+6);
             
-            //rosa
+            //
             crc2.moveTo (this.x+4,this.y+6);
             crc2.lineTo (this.x+16, this.y-6);
             
@@ -49,7 +49,7 @@ namespace Abschlussarbeit2 {
             crc2.fillStyle = this.color;
             crc2.beginPath();
             crc2.moveTo(this.x, this.y);
-                crc2.arc(this.x+10, this.y, 2, 0 , 2*Math.PI);
+            crc2.arc(this.x+10, this.y, 2, 0 , 2*Math.PI);              // kleiner Kreis in der Mitte
             
             crc2.closePath();
             
