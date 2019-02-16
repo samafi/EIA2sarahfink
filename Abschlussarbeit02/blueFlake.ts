@@ -1,6 +1,6 @@
 namespace Abschlussarbeit02 {
 
-    export class greyFlake extends MovingObject {
+    export class blueFlake extends MovingObject {
 
         constructor() {
             super();

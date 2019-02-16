@@ -4,12 +4,12 @@ namespace Abschlussarbeit02 {
 
         public paint(): void {
 
-            this.drawBackground( 100 );
+            this.drawBackground(100);
 
         }
 
         //Funktion Hintergrund
-        drawBackground( _forestHeight: number ): void {
+        drawBackground( _trees: number ): void {
             crc2.fillStyle = "rgb(52,129,184)";                                  // Blauer Hintergrund (Himmel)
             crc2.fillRect( 0, 0, crc2.canvas.width, crc2.canvas.height );
 

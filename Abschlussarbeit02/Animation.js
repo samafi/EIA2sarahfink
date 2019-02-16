@@ -2,7 +2,7 @@ var Abschlussarbeit02;
 (function (Abschlussarbeit02) {
     window.addEventListener("load", init);
     let imgData;
-    alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren :) Aber ACHTUNG die roten Flocken erwärmen Dich und geben Minuspunkte..");
+    alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren :) Aber ACHTUNG die roten Flocken erwärmen Dich und geben Minuspunkte.");
     //MovingObject
     let movingObjects = [];
     let m = 3;
@@ -37,7 +37,7 @@ var Abschlussarbeit02;
             trees.push(tree);
         }
         animate();
-        checkBubblePosition();
+        checkFlakePosition();
         createFlakes();
     }
     //Funktion für die Animation
@@ -48,14 +48,14 @@ var Abschlussarbeit02;
         drawObjects();
     }
     //Überprüfung ob Schneemann und Schneeflocke auf gleicher Höhe sind
-    function checkBubblePosition() {
-        window.setTimeout(checkBubblePosition, 10);
+    function checkFlakePosition() {
+        window.setTimeout(checkFlakePosition, 10);
         for (let i = 0; i < movingObjects.length; i++) {
-            let bubble = movingObjects[i];
-            let inside = snowman.checkIfInside(bubble.x, bubble.y);
+            let flake = movingObjects[i];
+            let inside = snowman.checkIfInside(flake.x, flake.y);
             if (inside) {
                 movingObjects.splice(i, 1);
-                updateHighscore(bubble.points);
+                updateHighscore(flake.points);
             }
         }
     }
@@ -65,8 +65,8 @@ var Abschlussarbeit02;
         let p = Math.floor(Math.random() * 3);
         switch (p) {
             case 0:
-                let GreyFlake = new Abschlussarbeit02.greyFlake();
-                movingObjects.push(GreyFlake);
+                let RedFlake = new Abschlussarbeit02.redFlake();
+                movingObjects.push(RedFlake);
                 break;
             case 1:
                 let WhiteFlake = new Abschlussarbeit02.whiteFlake();
@@ -120,7 +120,7 @@ var Abschlussarbeit02;
             highscore = 0;
         }
         else if (highscore >= 100) {
-            alert("Glückwunsch! Du hast den Schneemann gerettet und ihn auf die richtige Temperatur gebracht damit er nicht schmilzt :)");
+            alert("Glückwunsch! Du hast den Schneemann gerettet und ihn auf die richtige Temperatur gebracht :)");
             highscore = 0;
         }
     }

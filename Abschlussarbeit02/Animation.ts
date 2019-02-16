@@ -4,7 +4,7 @@ namespace Abschlussarbeit02 {
     export let crc2: CanvasRenderingContext2D;
     let imgData: ImageData;
 
-      alert ("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren :) Aber ACHTUNG die roten Flocken erwärmen Dich und geben Minuspunkte..")
+      alert ("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren :) Aber ACHTUNG die roten Flocken erwärmen Dich und geben Minuspunkte.")
 
     //MovingObject
 
@@ -59,7 +59,7 @@ namespace Abschlussarbeit02 {
         }
 
         animate();
-        checkBubblePosition();
+        checkFlakePosition();
         createFlakes();
     }
 
@@ -75,15 +75,15 @@ namespace Abschlussarbeit02 {
 
     //Überprüfung ob Schneemann und Schneeflocke auf gleicher Höhe sind
 
-    function checkBubblePosition(): void {
-        window.setTimeout( checkBubblePosition, 10 );
+    function checkFlakePosition(): void {
+        window.setTimeout( checkFlakePosition, 10 );
         for ( let i: number = 0; i < movingObjects.length; i++ ) {
-            let bubble = movingObjects[i];
-            let inside = snowman.checkIfInside( bubble.x, bubble.y );
+            let flake = movingObjects[i];
+            let inside = snowman.checkIfInside( flake.x, flake.y );
 
             if ( inside ) {
                 movingObjects.splice( i, 1 );
-                updateHighscore( bubble.points );
+                updateHighscore( flake.points );
             }
         }
     }
@@ -96,8 +96,8 @@ namespace Abschlussarbeit02 {
         let p: number = Math.floor( Math.random() * 3 );
         switch ( p ) {
             case 0:
-                let GreyFlake: greyFlake = new greyFlake();
-                movingObjects.push(GreyFlake);
+                let RedFlake: redFlake = new redFlake();
+                movingObjects.push(RedFlake);
                 break;
             case 1:
                 let WhiteFlake: whiteFlake = new whiteFlake();
@@ -166,7 +166,7 @@ namespace Abschlussarbeit02 {
             highscore = 0;
      }
         else if (highscore >=100) {
-            alert("Glückwunsch! Du hast den Schneemann gerettet und ihn auf die richtige Temperatur gebracht damit er nicht schmilzt :)");
+            alert("Glückwunsch! Du hast den Schneemann gerettet und ihn auf die richtige Temperatur gebracht :)");
             highscore = 0;        
         }
     }
