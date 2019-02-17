@@ -1,6 +1,6 @@
 var Abschlussarbeit02;
 (function (Abschlussarbeit02) {
-    class greyFlake extends Abschlussarbeit02.MovingObject {
+    class blueFlake extends Abschlussarbeit02.MovingObject {
         constructor() {
             super();
             this.points = +5; // + 5 Punkte
@@ -8,6 +8,6 @@ var Abschlussarbeit02;
             this.setRandomPosition();
         }
     }
-    Abschlussarbeit02.greyFlake = greyFlake;
+    Abschlussarbeit02.blueFlake = blueFlake;
 })(Abschlussarbeit02 || (Abschlussarbeit02 = {}));
 //# sourceMappingURL=blueFlake.js.map
