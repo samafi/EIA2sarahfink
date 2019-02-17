@@ -2,7 +2,7 @@ var Abschlussarbeit02;
 (function (Abschlussarbeit02) {
     window.addEventListener("load", init);
     let imgData;
-    alert("AAABenutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren :) Aber ACHTUNG die roten Flocken erwärmen Dich und geben Minuspunkte.");
+    alert("Benutze die Pfeiltasten um die lebensnotwendigen Schneeflocken zu berühren :) Aber ACHTUNG die roten Flocken erwärmen Dich und geben Minuspunkte.");
     //MovingObject
     let movingObjects = [];
     let m = 3;
